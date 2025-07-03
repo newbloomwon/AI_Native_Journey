@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novel Research Automation</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1, h2 { color: #333; }
+        form div { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+        .error { color: red; font-weight: bold; margin-bottom: 15px; }
+        .results { background-color: #f9f9f9; border: 1px solid #eee; padding: 15px; border-radius: 4px; margin-top: 20px; }
+        .results ul { list-style-type: disc; margin-left: 20px; }
+        pre { background-color: #eee; padding: 10px; border-radius: 4px; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; } /* Added pre-wrap and word-wrap */
+    </style>
+</head>
+<body>
+    <h1>Novel Research Automation App</h1>
+
+    {# Display any error messages #}
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form action="/research" method="post">
+        <div>
+            <label for="topic">Research Topic (Required):</label>
+            <input type="text" id="topic" name="topic" placeholder="e.g., Venus colonization technology" required>
+        </div>
+        <div>
+            <label for="context">Context (Optional):</label>
+            <textarea id="context" name="context" rows="2" placeholder="e.g., for hard science fiction novel about space exploration"></textarea>
+        </div>
+        <div>
+            <label for="keywords">Keywords (Comma-separated, Optional):</label>
+            <input type="text" id="keywords" name="keywords" placeholder="e.g., habitat, atmosphere, future">
+        </div>
+        <div>
+            <button type="submit">Start Research</button>
+        </div>
+    </form>
+
+    {# Display research results if available #}
+    {% if results %}
+        <div class="results">
+            <h2>Research Results for "{{ results.topic }}"</h2>
+            <p><strong>Total Sources Analyzed:</strong> {{ results.total_sources }}</p>
+            <p><strong>Summary:</strong></p>
+            <pre>{{ results.summary }}</pre> {# Use pre for pre-formatted text to preserve line breaks #}
+            {% if results.key_facts %}
+                <p><strong>Key Facts:</strong></p>
+                <ul>
+                    {% for fact in results.key_facts %}
+                        <li>{{ fact }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if results.output_file and results.output_file != "Not saved to file (check logs)." %}
+                <p>Detailed results also saved to: <code>research_results/{{ results.output_file }}</code></p>
+            {% endif %}
+        </div>
+    {% endif %}
+</body>
+</html>

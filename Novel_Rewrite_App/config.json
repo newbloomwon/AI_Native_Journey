@@ -1,0 +1,26 @@
+{
+  "search_engines": {
+    "google": {
+      "api_key": "AIzaSyAOuUTHnvlmCXxTUXfp_y5Zss4TOImFNDk",
+      "search_engine_id": "830ef98268259430e",
+      "base_url": "https://www.googleapis.com/customsearch/v1"
+    }
+  },
+  "filtering": {
+    "min_relevance_score": 0.3,
+    "excluded_domains": ["wikipedia.org", "reddit.com", "quora.com"],
+    "required_keywords": [],
+    "max_results_per_query": 10
+  },
+  "extraction": {
+    "max_content_length": 5000,
+    "min_word_count": 100,
+    "extract_headers": true,
+    "extract_links": false
+  },
+  "storage": {
+    "save_raw_html": false,
+    "save_processed_data": true,
+    "export_format": "markdown"
+  }
+}
