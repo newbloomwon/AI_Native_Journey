@@ -29,6 +29,17 @@ from bs4 import BeautifulSoup
 import re
 from urllib.parse import urlparse, urljoin
 import logging
+import fitz  # PyMuPDF
+try:
+    import pytesseract
+    TESSERACT_AVAILABLE = True
+except ImportError:
+    TESSERACT_AVAILABLE = False
+    print("Warning: pytesseract not available. OCR functionality will be disabled.")
+from PIL import Image
+import io
+import base64
+from pdf2image import convert_from_path
 
 # Configure logging
 logging.basicConfig(
@@ -390,32 +401,35 @@ class NovelRewriteApp:
     
     def _extract_from_url(self, url: str) -> Optional[ExtractedInfo]:
         """Extract information from a specific URL"""
+        # If the URL is a PDF, do not extract text, just provide a link
+        if url.lower().endswith('.pdf'):
+            return ExtractedInfo(
+                url=url,
+                title="PDF Document",
+                content="This is a PDF document. Click the link to view it in your browser.",
+                key_facts=[],
+                summary="PDF document. No text extracted.",
+                extracted_at=datetime.now().isoformat(),
+                word_count=0
+            )
         try:
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
             }
-            
             response = requests.get(url, headers=headers, timeout=10)
             response.raise_for_status()
-            
             soup = BeautifulSoup(response.content, 'html.parser')
-            
             # Extract title
             title = soup.find('title')
             title_text = title.get_text().strip() if title else "No title"
-            
             # Extract main content
             content = self._extract_main_content(soup)
-            
             # Extract key facts
             key_facts = self._extract_key_facts(content)
-            
             # Generate summary
             summary = self._generate_summary(content)
-            
             # Count words
             word_count = len(content.split())
-            
             return ExtractedInfo(
                 url=url,
                 title=title_text,
@@ -425,7 +439,6 @@ class NovelRewriteApp:
                 extracted_at=datetime.now().isoformat(),
                 word_count=word_count
             )
-            
         except Exception as e:
             logger.error(f"Error extracting from {url}: {e}")
             return None
@@ -636,6 +649,104 @@ class NovelRewriteApp:
         
         logger.info(f"Research workflow completed for topic: {topic}")
         return synthesis
+
+    def convert_pdf_to_images(self, pdf_path: str) -> List[Image.Image]:
+        """Converts a PDF file to a list of PIL Image objects."""
+        try:
+            logger.info(f"Converting PDF to images: {pdf_path}")
+            images = convert_from_path(pdf_path)
+            logger.info(f"Successfully converted PDF to {len(images)} images")
+            return images
+        except Exception as e:
+            logger.error(f"Error converting PDF to images: {e}")
+            raise
+
+    def extract_pdf_text_and_images(self, pdf_path: str) -> Dict[str, Any]:
+        """Extract text and images from PDF using PyMuPDF and OCR"""
+        try:
+            logger.info(f"Extracting content from PDF: {pdf_path}")
+            
+            # Open the PDF
+            doc = fitz.open(pdf_path)
+            extracted_data = {
+                "text": "",
+                "images": [],
+                "page_count": len(doc),
+                "ocr_images": []
+            }
+            
+            # Extract text and images from each page
+            for page_num in range(len(doc)):
+                page = doc.load_page(page_num)
+                
+                # Extract text
+                text = page.get_text()
+                extracted_data["text"] += f"\n--- Page {page_num + 1} ---\n{text}\n"
+                
+                # Extract images
+                image_list = page.get_images()
+                for img_index, img in enumerate(image_list):
+                    xref = img[0]
+                    pix = fitz.Pixmap(doc, xref)
+                    
+                    if pix.n - pix.alpha < 4:  # GRAY or RGB
+                        img_data = pix.tobytes("png")
+                        img_base64 = base64.b64encode(img_data).decode()
+                        extracted_data["images"].append({
+                            "page": page_num + 1,
+                            "index": img_index,
+                            "data": img_base64,
+                            "format": "png"
+                        })
+                    pix = None
+            
+            doc.close()
+            
+            # Convert PDF to images for OCR (if Tesseract is available)
+            if TESSERACT_AVAILABLE:
+                try:
+                    pdf_images = self.convert_pdf_to_images(pdf_path)
+                    for i, img in enumerate(pdf_images):
+                        # Convert PIL image to base64
+                        img_buffer = io.BytesIO()
+                        img.save(img_buffer, format='PNG')
+                        img_base64 = base64.b64encode(img_buffer.getvalue()).decode()
+                        
+                        extracted_data["ocr_images"].append({
+                            "page": i + 1,
+                            "data": img_base64,
+                            "format": "png"
+                        })
+                except Exception as e:
+                    logger.warning(f"Could not convert PDF to images for OCR: {e}")
+            else:
+                logger.info("OCR functionality disabled - Tesseract not available")
+            
+            logger.info(f"Successfully extracted content from PDF: {len(extracted_data['images'])} images, {len(extracted_data['ocr_images'])} OCR images")
+            return extracted_data
+            
+        except Exception as e:
+            logger.error(f"Error extracting PDF content: {e}")
+            raise
+
+    def process_uploaded_pdf(self, pdf_file) -> Dict[str, Any]:
+        """Process an uploaded PDF file and return extracted content"""
+        try:
+            # Save uploaded file temporarily
+            temp_path = Path("temp_upload.pdf")
+            pdf_file.save(temp_path)
+            
+            # Extract content
+            extracted_data = self.extract_pdf_text_and_images(str(temp_path))
+            
+            # Clean up temp file
+            temp_path.unlink()
+            
+            return extracted_data
+            
+        except Exception as e:
+            logger.error(f"Error processing uploaded PDF: {e}")
+            raise
 
 def main():
     """Main function to demonstrate the app"""

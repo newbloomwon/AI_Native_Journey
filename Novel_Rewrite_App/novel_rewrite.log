@@ -1052,3 +1052,775 @@ TypeError: NovelRewriteApp.__init__() got an unexpected keyword argument 'config
 2025-07-02 21:53:01,572 - INFO - Research workflow completed for topic: Venus floating cities
 2025-07-02 21:53:01,579 - INFO - Research completed for topic: 'Venus floating cities'
 2025-07-02 21:53:01,581 - INFO - 127.0.0.1 - - [02/Jul/2025 21:53:01] "POST /research HTTP/1.1" 200 -
+2025-07-04 16:15:55,931 - INFO - 127.0.0.1 - - [04/Jul/2025 16:15:55] "GET / HTTP/1.1" 200 -
+2025-07-04 16:21:10,397 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\novel_rewrite_app.py', reloading
+2025-07-04 16:21:12,133 - INFO -  * Restarting with stat
+2025-07-04 16:28:57,847 - INFO - Database initialized successfully
+2025-07-04 16:28:58,718 - INFO - Database initialized successfully
+2025-07-04 16:28:58,745 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:36:51,601 - INFO - Database initialized successfully
+2025-07-04 16:36:51,601 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:36:51,808 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 16:36:51,808 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 16:36:51,837 - INFO -  * Restarting with stat
+2025-07-04 16:36:54,944 - INFO - Database initialized successfully
+2025-07-04 16:36:54,944 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:36:54,985 - WARNING -  * Debugger is active!
+2025-07-04 16:36:54,992 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:38:17,623 - INFO - Database initialized successfully
+2025-07-04 16:38:17,624 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:38:17,800 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 16:38:17,800 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 16:38:17,813 - INFO -  * Restarting with stat
+2025-07-04 16:38:21,271 - INFO - Database initialized successfully
+2025-07-04 16:38:21,273 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:38:21,324 - WARNING -  * Debugger is active!
+2025-07-04 16:38:21,328 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:40:50,864 - INFO - Database initialized successfully
+2025-07-04 16:40:50,865 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:40:51,030 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 16:40:51,032 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 16:40:51,043 - INFO -  * Restarting with stat
+2025-07-04 16:40:55,912 - INFO - Database initialized successfully
+2025-07-04 16:40:55,960 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:40:56,069 - WARNING -  * Debugger is active!
+2025-07-04 16:40:56,081 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:42:47,406 - INFO - Database initialized successfully
+2025-07-04 16:42:47,420 - INFO - Starting research workflow for topic: Venus colonization technology
+2025-07-04 16:42:47,438 - INFO - Formulated query: Venus colonization technology for science fiction novel research technology future space research study
+2025-07-04 16:42:48,173 - INFO - Found 8 relevant results for query: Venus colonization technology for science fiction novel research technology future space research study
+2025-07-04 16:42:53,464 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 16:42:54,376 - INFO - Extracted info from: https://www.esa.int/esapub/br/br176/br176.pdf
+2025-07-04 16:42:57,533 - INFO - Extracted info from: https://www.nasa.gov/headquarters/library/find/bibliographies/space-colonization/
+2025-07-04 16:42:59,608 - ERROR - Error extracting from https://www.sciencedirect.com/science/article/pii/S0016328725001090: 403 Client Error: Forbidden for url: https://www.sciencedirect.com/science/article/pii/S0016328725001090
+2025-07-04 16:43:01,725 - INFO - Extracted info from: https://www.nasa.gov/exploration-research-and-technology/growing-plants-in-space/
+2025-07-04 16:43:04,266 - INFO - Extracted info from: https://science.nasa.gov/mars/
+2025-07-04 16:43:08,752 - INFO - Extracted info from: https://journal.finfar.org/articles/sun-ra-myth-science-and-science-fiction/
+2025-07-04 16:43:11,778 - INFO - Extracted info from: https://www.centauri-dreams.org/2024/02/16/to-the-stars-with-human-crews/
+2025-07-04 16:43:31,824 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 16:43:36,205 - INFO - Extracted info from: https://digital.csic.es/bitstream/10261/221203/3/VOLUMEN%2012.pdf
+2025-07-04 16:43:37,219 - INFO - Research saved as Venus_colonization_technology_20250704_164337.markdown
+2025-07-04 16:43:37,230 - INFO - Research workflow completed for topic: Venus colonization technology
+2025-07-04 16:43:37,277 - INFO - Starting research workflow for topic: Interplanetary radio communication
+2025-07-04 16:43:37,299 - INFO - Formulated query: Interplanetary radio communication for science fiction novel research technology future space research study
+2025-07-04 16:43:38,136 - INFO - Found 8 relevant results for query: Interplanetary radio communication for science fiction novel research technology future space research study
+2025-07-04 16:43:41,217 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 16:43:42,549 - INFO - Extracted info from: https://www.nasa.gov/wp-content/uploads/2015/01/archaeology_anthropology_and_interstellar_communication_tagged.pdf
+2025-07-04 16:43:45,534 - INFO - Extracted info from: https://news.asu.edu/b/20250226-meet-new-interplanetary-lab-lifeguards-spring-2025
+2025-07-04 16:43:48,343 - INFO - Extracted info from: https://research.gatech.edu/feature/space-research
+2025-07-04 16:43:50,948 - INFO - Extracted info from: https://www.usafa.edu/academy-illuminates-impact-of-interstellar-mission/
+2025-07-04 16:43:54,057 - INFO - Extracted info from: https://medium.com/@timventura/nano-wormholes-for-interstellar-communication-04dba609fa20
+2025-07-04 16:43:56,172 - INFO - Extracted info from: https://science.nasa.gov/mission/new-horizons/
+2025-07-04 16:43:58,579 - INFO - Extracted info from: https://www.centauri-dreams.org/2025/02/25/ernst-opik-and-the-interstellar-idea/
+2025-07-04 16:44:00,801 - INFO - Extracted info from: https://www.centauri-dreams.org/an-interstellar-booklist/
+2025-07-04 16:44:01,813 - INFO - Research saved as Interplanetary_radio_communication_20250704_164401.markdown
+2025-07-04 16:44:01,821 - INFO - Research workflow completed for topic: Interplanetary radio communication
+2025-07-04 16:44:01,850 - INFO - Starting research workflow for topic: Space habitat design principles
+2025-07-04 16:44:01,927 - INFO - Formulated query: Space habitat design principles for science fiction novel research technology future space research study
+2025-07-04 16:44:02,765 - INFO - Found 9 relevant results for query: Space habitat design principles for science fiction novel research technology future space research study
+2025-07-04 16:44:05,414 - INFO - Extracted info from: https://www.rochester.edu/newscenter/cities-on-asteroids-it-could-work-in-theory-543862/
+2025-07-04 16:44:07,393 - ERROR - Error extracting from https://www.sciencedirect.com/science/article/pii/S2405844024022114: 403 Client Error: Forbidden for url: https://www.sciencedirect.com/science/article/pii/S2405844024022114
+2025-07-04 16:44:09,243 - INFO - Extracted info from: https://www.nasa.gov/headquarters/library/find/bibliographies/space-colonization/
+2025-07-04 16:44:11,214 - INFO - Extracted info from: https://www.nasa.gov/exploration-research-and-technology/growing-plants-in-space/
+2025-07-04 16:44:12,762 - INFO - Extracted info from: https://www.e-flux.com/architecture/superhumanity/68646/lesser-worlds
+2025-07-04 16:44:15,573 - INFO - Extracted info from: http://spacearchitect.org/pubs/pub.htm
+2025-07-04 16:44:16,717 - ERROR - Error extracting from https://www.smithsonianbooks.com/store/aviation-military-history/space-stations-the-art-science-and-reality-of-working-in-space/: 403 Client Error: Forbidden for url: https://www.smithsonianbooks.com/store/aviation-military-history/space-stations-the-art-science-and-reality-of-working-in-space/
+2025-07-04 16:44:19,213 - INFO - Extracted info from: https://www.newschool.edu/nssr/story/new-school-space-exploration/
+2025-07-04 16:44:22,111 - INFO - Extracted info from: https://www.explore-space.mit.edu/
+2025-07-04 16:44:23,166 - INFO - Research saved as Space_habitat_design_principles_20250704_164423.markdown
+2025-07-04 16:44:23,229 - INFO - Research workflow completed for topic: Space habitat design principles
+2025-07-04 16:48:35,674 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 16:48:35,695 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 16:48:36,764 - INFO -  * Restarting with stat
+2025-07-04 16:48:37,169 - INFO -  * Restarting with stat
+2025-07-04 16:48:44,136 - INFO - Database initialized successfully
+2025-07-04 16:48:44,151 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:48:44,219 - WARNING -  * Debugger is active!
+2025-07-04 16:48:44,307 - INFO - Database initialized successfully
+2025-07-04 16:48:44,318 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:48:44,359 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:48:44,400 - WARNING -  * Debugger is active!
+2025-07-04 16:48:44,422 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:49:01,271 - INFO - Database initialized successfully
+2025-07-04 16:49:01,273 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:49:01,479 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 16:49:01,481 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 16:49:01,487 - INFO -  * Restarting with stat
+2025-07-04 16:49:06,149 - INFO - Database initialized successfully
+2025-07-04 16:49:06,149 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:49:06,205 - WARNING -  * Debugger is active!
+2025-07-04 16:49:06,243 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:49:10,154 - INFO - 127.0.0.1 - - [04/Jul/2025 16:49:10] "GET / HTTP/1.1" 200 -
+2025-07-04 16:49:16,607 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 16:49:16,609 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 16:49:16,635 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 16:49:17,145 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 16:49:21,000 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 16:49:21,899 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 16:49:23,045 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 16:49:25,769 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 16:49:26,379 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 16:49:27,748 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 16:49:29,416 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 16:49:31,589 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 16:49:32,595 - INFO - Research saved as Venus_floating_cities_20250704_164932.markdown
+2025-07-04 16:49:32,601 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 16:49:32,605 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 16:49:32,608 - INFO - 127.0.0.1 - - [04/Jul/2025 16:49:32] "POST /research HTTP/1.1" 200 -
+2025-07-04 16:49:39,769 - INFO - 127.0.0.1 - - [04/Jul/2025 16:49:39] "GET /pdf_viewer HTTP/1.1" 200 -
+2025-07-04 16:49:55,650 - INFO - 127.0.0.1 - - [04/Jul/2025 16:49:55] "GET / HTTP/1.1" 200 -
+2025-07-04 16:55:25,632 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 16:55:25,992 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 16:55:30,139 - INFO -  * Restarting with stat
+2025-07-04 16:55:30,171 - INFO -  * Restarting with stat
+2025-07-04 16:55:35,909 - INFO - Database initialized successfully
+2025-07-04 16:55:35,909 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:55:35,950 - WARNING -  * Debugger is active!
+2025-07-04 16:55:35,954 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:55:36,405 - INFO - Database initialized successfully
+2025-07-04 16:55:36,406 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:55:36,464 - WARNING -  * Debugger is active!
+2025-07-04 16:55:36,471 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:56:29,508 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 16:56:29,521 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 16:56:33,442 - INFO -  * Restarting with stat
+2025-07-04 16:56:33,576 - INFO -  * Restarting with stat
+2025-07-04 16:56:41,230 - INFO - Database initialized successfully
+2025-07-04 16:56:41,282 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:56:41,317 - INFO - Database initialized successfully
+2025-07-04 16:56:41,326 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:56:41,374 - WARNING -  * Debugger is active!
+2025-07-04 16:56:41,391 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:56:41,417 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:56:42,474 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 16:56:42,485 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 16:56:43,116 - INFO -  * Restarting with stat
+2025-07-04 16:56:43,123 - INFO -  * Restarting with stat
+2025-07-04 16:56:47,153 - INFO - Database initialized successfully
+2025-07-04 16:56:47,161 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:56:47,213 - WARNING -  * Debugger is active!
+2025-07-04 16:56:47,221 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:56:47,343 - INFO - Database initialized successfully
+2025-07-04 16:56:47,344 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:56:47,462 - WARNING -  * Debugger is active!
+2025-07-04 16:56:47,487 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:58:23,123 - INFO - Database initialized successfully
+2025-07-04 16:58:23,124 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:58:23,303 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 16:58:23,313 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 16:58:23,343 - INFO -  * Restarting with stat
+2025-07-04 16:58:24,118 - INFO - 127.0.0.1 - - [04/Jul/2025 16:58:24] "GET / HTTP/1.1" 200 -
+2025-07-04 16:58:27,713 - INFO - Database initialized successfully
+2025-07-04 16:58:27,713 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 16:58:27,761 - WARNING -  * Debugger is active!
+2025-07-04 16:58:27,766 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 16:58:32,813 - INFO - No PDF file selected for upload.
+2025-07-04 16:58:32,817 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 16:58:32,822 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 16:58:32,843 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 16:58:33,172 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 16:58:37,273 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 16:58:38,061 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 16:58:39,271 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 16:58:41,664 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 16:58:41,878 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 16:58:43,230 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 16:58:44,883 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 16:58:46,723 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 16:58:47,741 - INFO - Research saved as Venus_floating_cities_20250704_165847.markdown
+2025-07-04 16:58:47,745 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 16:58:47,749 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 16:58:47,755 - INFO - 127.0.0.1 - - [04/Jul/2025 16:58:47] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:02:08,965 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:02:08,982 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:02:09,507 - INFO -  * Restarting with stat
+2025-07-04 17:02:09,562 - INFO -  * Restarting with stat
+2025-07-04 17:02:13,457 - INFO - Database initialized successfully
+2025-07-04 17:02:13,458 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:02:13,482 - INFO - Database initialized successfully
+2025-07-04 17:02:13,484 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:02:13,503 - WARNING -  * Debugger is active!
+2025-07-04 17:02:13,509 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:02:13,519 - WARNING -  * Debugger is active!
+2025-07-04 17:02:13,526 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:02:22,864 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:02:22,883 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:02:23,802 - INFO -  * Restarting with stat
+2025-07-04 17:02:23,804 - INFO -  * Restarting with stat
+2025-07-04 17:07:10,514 - INFO - Database initialized successfully
+2025-07-04 17:07:10,514 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:07:10,671 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:07:10,672 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:07:10,686 - INFO -  * Restarting with stat
+2025-07-04 17:07:15,719 - INFO - Database initialized successfully
+2025-07-04 17:07:15,719 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:07:15,768 - WARNING -  * Debugger is active!
+2025-07-04 17:07:15,775 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:07:19,739 - INFO - 127.0.0.1 - - [04/Jul/2025 17:07:19] "GET / HTTP/1.1" 200 -
+2025-07-04 17:07:23,420 - INFO - 127.0.0.1 - - [04/Jul/2025 17:07:23] "GET / HTTP/1.1" 200 -
+2025-07-04 17:07:27,727 - INFO - No PDF file selected for upload.
+2025-07-04 17:07:27,735 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:07:27,737 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:07:27,743 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:07:28,056 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:07:31,148 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 17:07:31,714 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:07:32,846 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:07:34,999 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 17:07:35,265 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:07:36,569 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:07:38,251 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:07:39,999 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:07:41,005 - INFO - Research saved as Venus_floating_cities_20250704_170741.markdown
+2025-07-04 17:07:41,007 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:07:41,009 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:07:41,017 - INFO - 127.0.0.1 - - [04/Jul/2025 17:07:41] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:09:35,260 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:09:35,630 - INFO -  * Restarting with stat
+2025-07-04 17:09:40,102 - INFO - Database initialized successfully
+2025-07-04 17:09:40,103 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:09:40,141 - WARNING -  * Debugger is active!
+2025-07-04 17:09:40,145 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:10:02,552 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:10:03,065 - INFO -  * Restarting with stat
+2025-07-04 17:10:06,991 - INFO - Database initialized successfully
+2025-07-04 17:10:06,992 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:10:07,051 - WARNING -  * Debugger is active!
+2025-07-04 17:10:07,057 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:10:49,851 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:10:53,052 - INFO -  * Restarting with stat
+2025-07-04 17:10:59,271 - INFO - Database initialized successfully
+2025-07-04 17:10:59,281 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:10:59,416 - WARNING -  * Debugger is active!
+2025-07-04 17:10:59,468 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:11:22,964 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:11:23,428 - INFO -  * Restarting with stat
+2025-07-04 17:11:27,516 - INFO - Database initialized successfully
+2025-07-04 17:11:27,518 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:11:27,566 - WARNING -  * Debugger is active!
+2025-07-04 17:11:27,570 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:12:16,842 - INFO - Database initialized successfully
+2025-07-04 17:12:16,872 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:12:17,327 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:12:17,343 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:12:17,370 - INFO -  * Restarting with stat
+2025-07-04 17:12:22,073 - INFO - Database initialized successfully
+2025-07-04 17:12:22,076 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:12:22,123 - WARNING -  * Debugger is active!
+2025-07-04 17:12:22,139 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:12:27,615 - INFO - 127.0.0.1 - - [04/Jul/2025 17:12:27] "GET / HTTP/1.1" 200 -
+2025-07-04 17:12:31,941 - INFO - 127.0.0.1 - - [04/Jul/2025 17:12:31] "GET / HTTP/1.1" 200 -
+2025-07-04 17:12:37,548 - INFO - No PDF file selected for upload.
+2025-07-04 17:12:37,551 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:12:37,552 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:12:37,561 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:12:37,921 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:12:41,397 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 17:12:42,106 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:12:43,224 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:12:45,592 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 17:12:45,826 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:12:47,213 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:12:49,428 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:12:50,988 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:12:52,015 - INFO - Research saved as Venus_floating_cities_20250704_171252.markdown
+2025-07-04 17:12:52,066 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:12:52,076 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:12:52,086 - INFO - 127.0.0.1 - - [04/Jul/2025 17:12:52] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:13:54,874 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:13:55,210 - INFO -  * Restarting with stat
+2025-07-04 17:13:59,402 - INFO - Database initialized successfully
+2025-07-04 17:13:59,402 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:13:59,489 - WARNING -  * Debugger is active!
+2025-07-04 17:13:59,521 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:14:01,747 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:14:02,114 - INFO -  * Restarting with stat
+2025-07-04 17:14:06,220 - INFO - Database initialized successfully
+2025-07-04 17:14:06,220 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:14:06,273 - WARNING -  * Debugger is active!
+2025-07-04 17:14:06,278 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:14:07,367 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:14:07,860 - INFO -  * Restarting with stat
+2025-07-04 17:14:12,433 - INFO - Database initialized successfully
+2025-07-04 17:14:12,433 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:14:12,481 - WARNING -  * Debugger is active!
+2025-07-04 17:14:12,486 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:14:20,813 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:14:21,142 - INFO -  * Restarting with stat
+2025-07-04 17:14:25,710 - INFO - Database initialized successfully
+2025-07-04 17:14:25,750 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:14:25,950 - WARNING -  * Debugger is active!
+2025-07-04 17:14:25,956 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:15:43,158 - INFO - Database initialized successfully
+2025-07-04 17:15:43,160 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:15:43,342 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:15:43,354 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:15:43,372 - INFO -  * Restarting with stat
+2025-07-04 17:15:48,719 - INFO - Database initialized successfully
+2025-07-04 17:15:48,722 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:15:48,797 - WARNING -  * Debugger is active!
+2025-07-04 17:15:48,803 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:15:49,600 - INFO - 127.0.0.1 - - [04/Jul/2025 17:15:49] "GET / HTTP/1.1" 200 -
+2025-07-04 17:15:54,745 - INFO - 127.0.0.1 - - [04/Jul/2025 17:15:54] "GET / HTTP/1.1" 200 -
+2025-07-04 17:16:00,298 - INFO - No PDF file selected for upload.
+2025-07-04 17:16:00,322 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:16:00,332 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:16:00,356 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:16:00,764 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:16:04,778 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 17:16:05,507 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:16:06,601 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:16:08,865 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 17:16:09,078 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:16:10,301 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:16:12,274 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:16:13,872 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:16:14,877 - INFO - Research saved as Venus_floating_cities_20250704_171614.markdown
+2025-07-04 17:16:14,883 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:16:14,894 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:16:14,901 - INFO - 127.0.0.1 - - [04/Jul/2025 17:16:14] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:18:03,833 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:18:04,247 - INFO -  * Restarting with stat
+2025-07-04 17:18:09,104 - INFO - Database initialized successfully
+2025-07-04 17:18:09,104 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:18:09,152 - WARNING -  * Debugger is active!
+2025-07-04 17:18:09,158 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:18:10,202 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:18:10,597 - INFO -  * Restarting with stat
+2025-07-04 17:18:14,283 - INFO - Database initialized successfully
+2025-07-04 17:18:14,285 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:18:14,358 - WARNING -  * Debugger is active!
+2025-07-04 17:18:14,364 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:18:29,574 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:18:30,059 - INFO -  * Restarting with stat
+2025-07-04 17:18:35,583 - INFO - Database initialized successfully
+2025-07-04 17:18:35,584 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:18:35,649 - WARNING -  * Debugger is active!
+2025-07-04 17:18:35,662 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:19:08,770 - INFO - Database initialized successfully
+2025-07-04 17:19:08,772 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:19:08,930 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:19:08,932 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:19:08,939 - INFO -  * Restarting with stat
+2025-07-04 17:19:13,057 - INFO - Database initialized successfully
+2025-07-04 17:19:13,059 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:19:13,123 - WARNING -  * Debugger is active!
+2025-07-04 17:19:13,131 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:19:14,313 - INFO - 127.0.0.1 - - [04/Jul/2025 17:19:14] "GET / HTTP/1.1" 200 -
+2025-07-04 17:19:20,526 - INFO - No PDF file selected for upload.
+2025-07-04 17:19:20,530 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:19:20,535 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:19:20,543 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:19:20,851 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:19:24,540 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 17:19:25,284 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:19:26,433 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:19:28,616 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 17:19:28,827 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:19:30,207 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:19:31,883 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:19:33,522 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:19:34,544 - INFO - Research saved as Venus_floating_cities_20250704_171934.markdown
+2025-07-04 17:19:34,582 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:19:34,593 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:19:34,636 - INFO - 127.0.0.1 - - [04/Jul/2025 17:19:34] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:22:03,954 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:22:04,469 - INFO -  * Restarting with stat
+2025-07-04 17:22:10,566 - INFO - Database initialized successfully
+2025-07-04 17:22:10,568 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:22:10,605 - WARNING -  * Debugger is active!
+2025-07-04 17:22:10,610 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:23:24,567 - INFO - Database initialized successfully
+2025-07-04 17:23:24,568 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:23:24,736 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:23:24,737 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:23:24,747 - INFO -  * Restarting with stat
+2025-07-04 17:23:28,541 - INFO - Database initialized successfully
+2025-07-04 17:23:28,543 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:23:28,588 - WARNING -  * Debugger is active!
+2025-07-04 17:23:28,594 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:23:28,628 - INFO - 127.0.0.1 - - [04/Jul/2025 17:23:28] "GET / HTTP/1.1" 200 -
+2025-07-04 17:23:32,831 - INFO - 127.0.0.1 - - [04/Jul/2025 17:23:32] "GET / HTTP/1.1" 200 -
+2025-07-04 17:23:36,911 - INFO - No PDF file selected for upload.
+2025-07-04 17:23:36,922 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:23:36,923 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:23:36,928 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:23:37,301 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:23:41,003 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 17:23:41,601 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:23:42,696 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:23:44,851 - WARNING - Some characters could not be decoded, and were replaced with REPLACEMENT CHARACTER.
+2025-07-04 17:23:45,201 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:23:46,453 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:23:48,049 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:23:49,550 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:23:50,556 - INFO - Research saved as Venus_floating_cities_20250704_172350.markdown
+2025-07-04 17:23:50,557 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:23:50,558 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:23:50,560 - INFO - 127.0.0.1 - - [04/Jul/2025 17:23:50] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:26:44,587 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:26:44,960 - INFO -  * Restarting with stat
+2025-07-04 17:29:16,814 - INFO - Database initialized successfully
+2025-07-04 17:29:16,816 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:29:17,006 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:29:17,007 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:29:17,014 - INFO -  * Restarting with stat
+2025-07-04 17:29:22,634 - INFO - Database initialized successfully
+2025-07-04 17:29:22,638 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:29:22,699 - WARNING -  * Debugger is active!
+2025-07-04 17:29:22,704 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:29:24,949 - INFO - 127.0.0.1 - - [04/Jul/2025 17:29:24] "GET / HTTP/1.1" 200 -
+2025-07-04 17:29:30,227 - INFO - No PDF file selected for upload.
+2025-07-04 17:29:30,234 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:29:30,258 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:29:30,305 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:29:30,571 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:29:30,578 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:29:31,688 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:29:32,694 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:29:33,996 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:29:35,802 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:29:37,371 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:29:38,379 - INFO - Research saved as Venus_floating_cities_20250704_172938.markdown
+2025-07-04 17:29:38,385 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:29:38,389 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:29:38,393 - INFO - 127.0.0.1 - - [04/Jul/2025 17:29:38] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:32:30,273 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:32:31,165 - INFO -  * Restarting with stat
+2025-07-04 17:32:35,248 - INFO - Database initialized successfully
+2025-07-04 17:32:35,249 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:32:35,298 - WARNING -  * Debugger is active!
+2025-07-04 17:32:35,305 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:33:32,726 - INFO - Database initialized successfully
+2025-07-04 17:33:32,726 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:33:32,898 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:33:32,900 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:33:32,907 - INFO -  * Restarting with stat
+2025-07-04 17:33:37,297 - INFO - Database initialized successfully
+2025-07-04 17:33:37,298 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:33:37,355 - WARNING -  * Debugger is active!
+2025-07-04 17:33:37,362 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:33:39,297 - INFO - 127.0.0.1 - - [04/Jul/2025 17:33:39] "GET / HTTP/1.1" 200 -
+2025-07-04 17:33:44,291 - INFO - No PDF file selected for upload.
+2025-07-04 17:33:44,332 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:33:44,343 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:33:44,353 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:33:44,640 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:33:44,651 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:33:45,762 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:33:46,775 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:33:47,996 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:33:49,737 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:33:51,277 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:33:52,280 - INFO - Research saved as Venus_floating_cities_20250704_173352.markdown
+2025-07-04 17:33:52,282 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:33:52,284 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:33:52,287 - INFO - 127.0.0.1 - - [04/Jul/2025 17:33:52] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:35:26,107 - INFO - Database initialized successfully
+2025-07-04 17:35:26,108 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:35:26,286 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:35:26,288 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:35:26,295 - INFO -  * Restarting with stat
+2025-07-04 17:35:31,160 - INFO - Database initialized successfully
+2025-07-04 17:35:31,161 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:35:31,224 - WARNING -  * Debugger is active!
+2025-07-04 17:35:31,230 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:35:35,387 - INFO - 127.0.0.1 - - [04/Jul/2025 17:35:35] "GET / HTTP/1.1" 200 -
+2025-07-04 17:35:40,034 - INFO - No PDF file selected for upload.
+2025-07-04 17:35:40,035 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:35:40,036 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:35:40,047 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:35:40,419 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:35:40,427 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:35:41,525 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:35:42,532 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:35:43,879 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:35:45,723 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:35:47,271 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:35:48,275 - INFO - Research saved as Venus_floating_cities_20250704_173548.markdown
+2025-07-04 17:35:48,277 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:35:48,278 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:35:48,284 - INFO - 127.0.0.1 - - [04/Jul/2025 17:35:48] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:38:13,389 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:38:13,874 - INFO -  * Restarting with stat
+2025-07-04 17:40:49,611 - INFO - Database initialized successfully
+2025-07-04 17:40:49,614 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:40:49,780 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:40:49,780 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:40:49,788 - INFO -  * Restarting with stat
+2025-07-04 17:40:51,944 - INFO - Database initialized successfully
+2025-07-04 17:40:51,944 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:40:51,976 - WARNING -  * Debugger is active!
+2025-07-04 17:40:51,980 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:40:56,593 - INFO - 127.0.0.1 - - [04/Jul/2025 17:40:56] "GET / HTTP/1.1" 200 -
+2025-07-04 17:41:02,865 - INFO - No PDF file selected for upload.
+2025-07-04 17:41:02,869 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:41:02,871 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:41:02,880 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:41:03,178 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:41:03,181 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:41:04,299 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:41:05,305 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:41:06,717 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:41:08,510 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:41:10,042 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:41:11,047 - INFO - Research saved as Venus_floating_cities_20250704_174111.markdown
+2025-07-04 17:41:11,047 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:41:11,054 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:41:11,056 - INFO - 127.0.0.1 - - [04/Jul/2025 17:41:11] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:42:58,816 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:42:59,166 - INFO -  * Restarting with stat
+2025-07-04 17:43:03,694 - INFO - Database initialized successfully
+2025-07-04 17:43:03,694 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:43:03,739 - WARNING -  * Debugger is active!
+2025-07-04 17:43:03,746 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:43:05,934 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:43:06,627 - INFO -  * Restarting with stat
+2025-07-04 17:43:10,738 - INFO - Database initialized successfully
+2025-07-04 17:43:10,739 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:43:10,779 - WARNING -  * Debugger is active!
+2025-07-04 17:43:10,785 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:43:19,902 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:43:20,123 - INFO -  * Restarting with stat
+2025-07-04 17:43:23,032 - INFO - Database initialized successfully
+2025-07-04 17:43:23,033 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:43:23,082 - WARNING -  * Debugger is active!
+2025-07-04 17:43:23,086 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:43:38,560 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:43:38,850 - INFO -  * Restarting with stat
+2025-07-04 17:43:43,528 - INFO - Database initialized successfully
+2025-07-04 17:43:43,529 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:43:43,586 - WARNING -  * Debugger is active!
+2025-07-04 17:43:43,593 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:44:10,449 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:44:10,862 - INFO -  * Restarting with stat
+2025-07-04 17:44:29,348 - INFO - Database initialized successfully
+2025-07-04 17:44:29,352 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:44:29,652 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:44:29,654 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:44:29,666 - INFO -  * Restarting with stat
+2025-07-04 17:44:34,182 - INFO - Database initialized successfully
+2025-07-04 17:44:34,192 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:44:34,271 - WARNING -  * Debugger is active!
+2025-07-04 17:44:34,276 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:44:34,327 - INFO - 127.0.0.1 - - [04/Jul/2025 17:44:34] "GET / HTTP/1.1" 200 -
+2025-07-04 17:44:39,342 - INFO - No PDF file selected for upload.
+2025-07-04 17:44:39,402 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:44:39,419 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:44:39,437 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:44:39,938 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:44:39,949 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:44:41,050 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:44:42,057 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:44:43,530 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:44:45,493 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:44:47,272 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:44:48,280 - INFO - Research saved as Venus_floating_cities_20250704_174448.markdown
+2025-07-04 17:44:48,284 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:44:48,289 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:44:48,292 - INFO - 127.0.0.1 - - [04/Jul/2025 17:44:48] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:47:11,327 - INFO - Database initialized successfully
+2025-07-04 17:47:11,328 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:47:11,532 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:47:11,532 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:47:11,542 - INFO -  * Restarting with stat
+2025-07-04 17:47:16,344 - INFO - Database initialized successfully
+2025-07-04 17:47:16,347 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:47:16,410 - WARNING -  * Debugger is active!
+2025-07-04 17:47:16,419 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:47:18,082 - INFO - 127.0.0.1 - - [04/Jul/2025 17:47:18] "GET / HTTP/1.1" 200 -
+2025-07-04 17:47:23,501 - INFO - No PDF file selected for upload.
+2025-07-04 17:47:23,510 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:47:23,512 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:47:23,544 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:47:23,875 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:47:23,883 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:47:24,997 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:47:26,006 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:47:27,294 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:47:29,746 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:47:31,494 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:47:32,506 - INFO - Research saved as Venus_floating_cities_20250704_174732.markdown
+2025-07-04 17:47:32,508 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:47:32,516 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:47:32,519 - INFO - 127.0.0.1 - - [04/Jul/2025 17:47:32] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:48:17,511 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:48:18,374 - INFO -  * Restarting with stat
+2025-07-04 17:48:22,730 - INFO - Database initialized successfully
+2025-07-04 17:48:22,731 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:48:22,778 - WARNING -  * Debugger is active!
+2025-07-04 17:48:22,783 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:48:24,382 - INFO - 127.0.0.1 - - [04/Jul/2025 17:48:24] "GET / HTTP/1.1" 200 -
+2025-07-04 17:48:29,029 - INFO - No PDF file selected for upload.
+2025-07-04 17:48:29,030 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:48:29,030 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:48:29,037 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:48:29,615 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:48:29,629 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:48:30,705 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:48:31,713 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:48:32,873 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:48:34,410 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:48:36,304 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:48:37,311 - INFO - Research saved as Venus_floating_cities_20250704_174837.markdown
+2025-07-04 17:48:37,326 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:48:37,326 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:48:37,330 - INFO - 127.0.0.1 - - [04/Jul/2025 17:48:37] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:48:56,519 - INFO - Database initialized successfully
+2025-07-04 17:48:56,519 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:48:56,640 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:48:56,640 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:48:56,646 - INFO -  * Restarting with stat
+2025-07-04 17:48:58,781 - INFO - Database initialized successfully
+2025-07-04 17:48:58,782 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:48:58,818 - WARNING -  * Debugger is active!
+2025-07-04 17:48:58,823 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:49:02,202 - INFO - 127.0.0.1 - - [04/Jul/2025 17:49:02] "GET / HTTP/1.1" 200 -
+2025-07-04 17:49:06,549 - INFO - No PDF file selected for upload.
+2025-07-04 17:49:06,561 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:49:06,565 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:49:06,577 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:49:06,866 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:49:06,874 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:49:07,968 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:49:08,987 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:49:10,313 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:49:11,982 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:49:13,472 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:49:14,481 - INFO - Research saved as Venus_floating_cities_20250704_174914.markdown
+2025-07-04 17:49:14,486 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:49:14,488 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:49:14,490 - INFO - 127.0.0.1 - - [04/Jul/2025 17:49:14] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:52:33,721 - INFO - Database initialized successfully
+2025-07-04 17:52:33,735 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:52:33,954 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:52:33,960 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:52:33,973 - INFO -  * Restarting with stat
+2025-07-04 17:52:38,510 - INFO - Database initialized successfully
+2025-07-04 17:52:38,513 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:52:38,564 - WARNING -  * Debugger is active!
+2025-07-04 17:52:38,569 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:52:38,629 - INFO - 127.0.0.1 - - [04/Jul/2025 17:52:38] "GET / HTTP/1.1" 200 -
+2025-07-04 17:52:43,386 - INFO - No PDF file selected for upload.
+2025-07-04 17:52:43,393 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:52:43,395 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:52:43,399 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:52:43,726 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:52:43,733 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:52:44,827 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:52:45,834 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:52:47,217 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:52:48,755 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:52:50,453 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:52:51,458 - INFO - Research saved as Venus_floating_cities_20250704_175251.markdown
+2025-07-04 17:52:51,461 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:52:51,468 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:52:51,473 - INFO - 127.0.0.1 - - [04/Jul/2025 17:52:51] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:53:59,913 - INFO - Database initialized successfully
+2025-07-04 17:53:59,913 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:54:00,048 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:54:00,048 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:54:00,051 - INFO -  * Restarting with stat
+2025-07-04 17:54:02,748 - INFO - Database initialized successfully
+2025-07-04 17:54:02,749 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:54:02,787 - WARNING -  * Debugger is active!
+2025-07-04 17:54:02,791 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:54:05,836 - INFO - 127.0.0.1 - - [04/Jul/2025 17:54:05] "GET / HTTP/1.1" 200 -
+2025-07-04 17:54:11,833 - INFO - No PDF file selected for upload.
+2025-07-04 17:54:11,834 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:54:11,842 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:54:11,851 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:54:12,271 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:54:12,278 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:54:13,620 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:54:14,625 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:54:15,784 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:54:18,143 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:54:19,722 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:54:20,727 - INFO - Research saved as Venus_floating_cities_20250704_175420.markdown
+2025-07-04 17:54:20,730 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:54:20,731 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:54:20,733 - INFO - 127.0.0.1 - - [04/Jul/2025 17:54:20] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:55:53,473 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:55:53,947 - INFO -  * Restarting with stat
+2025-07-04 17:55:58,372 - INFO - Database initialized successfully
+2025-07-04 17:55:58,372 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:55:58,422 - WARNING -  * Debugger is active!
+2025-07-04 17:55:58,428 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:56:10,450 - INFO - Database initialized successfully
+2025-07-04 17:56:10,450 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:56:10,562 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:56:10,562 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:56:10,574 - INFO -  * Restarting with stat
+2025-07-04 17:56:12,975 - INFO - Database initialized successfully
+2025-07-04 17:56:12,975 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:56:12,999 - WARNING -  * Debugger is active!
+2025-07-04 17:56:13,004 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:56:16,684 - INFO - 127.0.0.1 - - [04/Jul/2025 17:56:16] "GET / HTTP/1.1" 200 -
+2025-07-04 17:56:21,489 - INFO - No PDF file selected for upload.
+2025-07-04 17:56:21,490 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:56:21,490 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:56:21,500 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:56:21,805 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:56:21,810 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:56:22,895 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:56:23,897 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:56:25,177 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:56:26,760 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:56:28,292 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:56:29,308 - INFO - Research saved as Venus_floating_cities_20250704_175629.markdown
+2025-07-04 17:56:29,322 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:56:29,328 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:56:29,332 - INFO - 127.0.0.1 - - [04/Jul/2025 17:56:29] "POST /research HTTP/1.1" 200 -
+2025-07-04 17:58:05,102 - INFO -  * Detected change in 'C:\\Users\\micha\\AI_Native_Journey\\Novel_Rewrite_App\\app.py', reloading
+2025-07-04 17:58:05,535 - INFO -  * Restarting with stat
+2025-07-04 17:58:10,376 - INFO - Database initialized successfully
+2025-07-04 17:58:10,378 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:58:10,443 - WARNING -  * Debugger is active!
+2025-07-04 17:58:10,449 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:58:27,490 - INFO - Database initialized successfully
+2025-07-04 17:58:27,490 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:58:27,641 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-04 17:58:27,641 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-04 17:58:27,648 - INFO -  * Restarting with stat
+2025-07-04 17:58:32,527 - INFO - Database initialized successfully
+2025-07-04 17:58:32,529 - INFO - NovelRewriteApp initialized successfully.
+2025-07-04 17:58:32,592 - WARNING -  * Debugger is active!
+2025-07-04 17:58:32,599 - INFO -  * Debugger PIN: 708-241-964
+2025-07-04 17:58:32,671 - INFO - 127.0.0.1 - - [04/Jul/2025 17:58:32] "GET / HTTP/1.1" 200 -
+2025-07-04 17:58:37,352 - INFO - No PDF file selected for upload.
+2025-07-04 17:58:37,354 - INFO - Received research request for topic: 'Venus floating cities'
+2025-07-04 17:58:37,358 - INFO - Starting research workflow for topic: Venus floating cities
+2025-07-04 17:58:37,375 - INFO - Formulated query: Venus floating cities research study
+2025-07-04 17:58:37,702 - INFO - Found 6 relevant results for query: Venus floating cities research study
+2025-07-04 17:58:37,709 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20205008515/downloads/Venus_cities-AIAA-ASCEND-smaller.pdf
+2025-07-04 17:58:38,854 - INFO - Extracted info from: https://www.universetoday.com/articles/colonizing-venus-with-floating-cities
+2025-07-04 17:58:39,862 - INFO - Extracted info from: https://ntrs.nasa.gov/api/citations/20030022668/downloads/20030022668.pdf
+2025-07-04 17:58:41,177 - INFO - Extracted info from: https://www.iflscience.com/nasa-wants-establish-floating-cloud-city-study-venus-26623
+2025-07-04 17:58:42,774 - INFO - Extracted info from: https://www.thepipettepen.com/the-viability-of-a-cloud-city-on-venus/
+2025-07-04 17:58:44,561 - INFO - Extracted info from: https://www.cnn.com/2014/12/23/tech/innovation/tomorrow-transformed-venus-blimp-city
+2025-07-04 17:58:45,569 - INFO - Research saved as Venus_floating_cities_20250704_175845.markdown
+2025-07-04 17:58:45,571 - INFO - Research workflow completed for topic: Venus floating cities
+2025-07-04 17:58:45,573 - INFO - Research completed for topic: 'Venus floating cities'
+2025-07-04 17:58:45,578 - INFO - 127.0.0.1 - - [04/Jul/2025 17:58:45] "POST /research HTTP/1.1" 200 -

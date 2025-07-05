@@ -20,13 +20,20 @@
 </head>
 <body>
     <h1>Novel Research Automation App</h1>
+    
+    <!-- Navigation -->
+    <div style="margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;">
+        <a href="/pdf_viewer" style="color: #007bff; text-decoration: none; font-weight: bold;">📄 PDF Viewer & Analysis</a>
+        <span style="margin: 0 10px; color: #6c757d;">|</span>
+        <span style="color: #6c757d;">Research Automation</span>
+    </div>
 
     {# Display any error messages #}
     {% if error %}
         <p class="error">{{ error }}</p>
     {% endif %}
 
-    <form action="/research" method="post">
+    <form action="/research" method="post" enctype="multipart/form-data">
         <div>
             <label for="topic">Research Topic (Required):</label>
             <input type="text" id="topic" name="topic" placeholder="e.g., Venus colonization technology" required>
@@ -40,6 +47,10 @@
             <input type="text" id="keywords" name="keywords" placeholder="e.g., habitat, atmosphere, future">
         </div>
         <div>
+            <label for="pdf_file">Upload PDF (Optional):</label>
+            <input type="file" id="pdf_file" name="pdf_file" accept=".pdf">
+        </div>
+        <div>
             <button type="submit">Start Research</button>
         </div>
     </form>
@@ -50,17 +61,42 @@
             <h2>Research Results for "{{ results.topic }}"</h2>
             <p><strong>Total Sources Analyzed:</strong> {{ results.total_sources }}</p>
             <p><strong>Summary:</strong></p>
-            <pre>{{ results.summary }}</pre> {# Use pre for pre-formatted text to preserve line breaks #}
+            {% if "PDF document" in results.summary and results.sources and results.sources[0] %}
+                <p>This is from one or more PDF documents. <span>Click the link(s) to view browser.</span></p>
+            {% else %}
+                <pre>{{ results.summary }}</pre>
+            {% endif %}
             {% if results.key_facts %}
                 <p><strong>Key Facts:</strong></p>
                 <ul>
                     {% for fact in results.key_facts %}
-                        <li>{{ fact }}</li>
+                        {% if "PDF document" in fact and results.sources and results.sources[0] %}
+                            <li>This is from one or more PDF documents. <span>Click the link(s) to view browser.</span></li>
+                        {% else %}
+                            <li>{{ fact }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if results.sources %}
+                <p><strong>Sources:</strong></p>
+                <ul>
+                    {% for source in results.sources %}
+                        <li>
+                            {% if source.endswith('.pdf') %}
+                                <a href="{{ source }}" target="_blank" rel="noopener">PDF Document: Click here to view</a>
+                            {% else %}
+                                <a href="{{ source }}" target="_blank" rel="noopener">{{ source }}</a>
+                            {% endif %}
+                        </li>
                     {% endfor %}
                 </ul>
             {% endif %}
             {% if results.output_file and results.output_file != "Not saved to file (check logs)." %}
                 <p>Detailed results also saved to: <code>research_results/{{ results.output_file }}</code></p>
+            {% endif %}
+            {% if results.uploaded_pdf_filename %}
+                <p>Uploaded PDF: <a href="{{ url_for('pdf_viewer', filename=results.uploaded_pdf_filename) }}" target="_blank" rel="noopener">{{ results.uploaded_pdf_filename }}</a></p>
             {% endif %}
         </div>
     {% endif %}

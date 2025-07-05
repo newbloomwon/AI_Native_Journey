@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript PDF Viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- PDF.js library from Mozilla -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style the file input button */
+        input[type="file"]::file-selector-button {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        input[type="file"]::file-selector-button:hover {
+            background-color: #4338ca;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Client-Side PDF Viewer</h1>
+            <p class="mt-2 text-gray-600">Select a PDF file from your computer to render it below.</p>
+        </header>
+
+        <!-- File Input -->
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+            <label for="pdf-upload" class="block text-sm font-medium text-gray-700 mb-2">Choose PDF File</label>
+            <input type="file" id="pdf-upload" accept="application/pdf" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"/>
+        </div>
+
+        <!-- PDF Controls -->
+        <div id="pdf-controls" class="flex items-center justify-center space-x-4 my-4 hidden">
+            <button id="prev-page" class="px-4 py-2 bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors">
+                Previous
+            </button>
+            <span class="text-lg font-medium">
+                Page: <span id="page-num"></span> / <span id="page-count"></span>
+            </span>
+            <button id="next-page" class="px-4 py-2 bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors">
+                Next
+            </button>
+        </div>
+        
+        <!-- PDF Rendering Area -->
+        <div id="pdf-render-container" class="bg-white p-2 sm:p-4 rounded-lg shadow-lg" style="min-height: 50vh;">
+             <canvas id="pdf-render" class="w-full h-full"></canvas>
+             <div id="loader" class="text-center p-10 hidden">
+                <p class="text-gray-500">Loading PDF...</p>
+             </div>
+             <div id="placeholder" class="text-center p-10">
+                <p class="text-gray-500">PDF will be rendered here.</p>
+             </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Set the worker source for PDF.js. This is crucial for the library to work.
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+        // DOM Elements
+        const pdfUpload = document.getElementById('pdf-upload');
+        const pdfRender = document.getElementById('pdf-render');
+        const pdfControls = document.getElementById('pdf-controls');
+        const prevPageBtn = document.getElementById('prev-page');
+        const nextPageBtn = document.getElementById('next-page');
+        const pageNumSpan = document.getElementById('page-num');
+        const pageCountSpan = document.getElementById('page-count');
+        const loader = document.getElementById('loader');
+        const placeholder = document.getElementById('placeholder');
+        const canvasContainer = document.getElementById('pdf-render-container');
+
+        // State
+        let pdfDoc = null;
+        let pageNum = 1;
+        let pageIsRendering = false;
+        let pageNumIsPending = null;
+
+        /**
+         * Renders a specific page of the PDF.
+         * @param {number} num - The page number to render.
+         */
+        const renderPage = num => {
+            pageIsRendering = true;
+            
+            // Get page
+            pdfDoc.getPage(num).then(page => {
+                // Set the scale of the PDF to the width of its container.
+                const viewport = page.getViewport({ scale: canvasContainer.clientWidth / page.getViewport({scale: 1.0}).width });
+                
+                const canvas = pdfRender;
+                const ctx = canvas.getContext('2d');
+                
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                page.render(renderContext).promise.then(() => {
+                    pageIsRendering = false;
+                    if (pageNumIsPending !== null) {
+                        renderPage(pageNumIsPending);
+                        pageNumIsPending = null;
+                    }
+                });
+
+                // Update page counters
+                pageNumSpan.textContent = num;
+            });
+        };
+
+        /**
+         * If another page is requested while one is already rendering, queue it up.
+         * @param {number} num - The page number to queue.
+         */
+        const queueRenderPage = num => {
+            if (pageIsRendering) {
+                pageNumIsPending = num;
+            } else {
+                renderPage(num);
+            }
+        };
+
+        /**
+         * Handles the previous page button click.
+         */
+        const onPrevPage = () => {
+            if (pageNum <= 1) {
+                return;
+            }
+            pageNum--;
+            queueRenderPage(pageNum);
+            updateButtonStates();
+        };
+
+        /**
+         * Handles the next page button click.
+         */
+        const onNextPage = () => {
+            if (pageNum >= pdfDoc.numPages) {
+                return;
+            }
+            pageNum++;
+            queueRenderPage(pageNum);
+            updateButtonStates();
+        };
+        
+        /**
+         * Updates the disabled state of the navigation buttons.
+         */
+        const updateButtonStates = () => {
+            prevPageBtn.disabled = pageNum <= 1;
+            nextPageBtn.disabled = pageNum >= pdfDoc.numPages;
+        };
+
+
+        /**
+         * Asynchronously loads a PDF from a URL (in this case, a blob URL from the file input).
+         * @param {string} url - The URL of the PDF file.
+         */
+        const showPdf = url => {
+            loader.classList.remove('hidden');
+            placeholder.classList.add('hidden');
+            pdfControls.classList.add('hidden');
+
+            const loadingTask = pdfjsLib.getDocument(url);
+            loadingTask.promise.then(pdfDoc_ => {
+                loader.classList.add('hidden');
+                pdfControls.classList.remove('hidden');
+
+                pdfDoc = pdfDoc_;
+                pageCountSpan.textContent = pdfDoc.numPages;
+                
+                // Reset to the first page and render
+                pageNum = 1;
+                renderPage(pageNum);
+                updateButtonStates();
+
+            }).catch(err => {
+                loader.classList.add('hidden');
+                placeholder.classList.remove('hidden');
+                placeholder.textContent = `Error loading PDF: ${err.message}`;
+                console.error('Error loading PDF:', err);
+            });
+        };
+
+        // Event Listeners
+        pdfUpload.addEventListener('change', e => {
+            const file = e.target.files[0];
+            if (file && file.type === 'application/pdf') {
+                // Create a URL for the local file to pass to PDF.js
+                const fileURL = URL.createObjectURL(file);
+                showPdf(fileURL);
+            }
+        });
+
+        prevPageBtn.addEventListener('click', onPrevPage);
+        nextPageBtn.addEventListener('click', onNextPage);
+
+    </script>
+</body>
+</html>
