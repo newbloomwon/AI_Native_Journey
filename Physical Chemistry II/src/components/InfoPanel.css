@@ -1,0 +1,90 @@
+.info-panel {
+  background-color: #ffffff;
+  border-radius: 0;
+  padding: 0;
+  margin-top: 0;
+}
+
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.info-header h2 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.step-indicator {
+  background-color: #4a90e2;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.step-details p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.reaction-details {
+  margin-top: 8px;
+}
+
+.key-points {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.key-points h4 {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.key-points ul {
+  padding-left: 20px;
+}
+
+.key-points li {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  color: #555;
+}
+
+.energy-info {
+  background-color: #f0f7ff;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 4px solid #4a90e2;
+}
+
+.energy-info h4 {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  margin-bottom: 6px;
+}
+
+.energy-info p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: #555;
+}
+
+@media (min-width: 768px) {
+  .info-panel {
+    width: 100%;
+  }
+}

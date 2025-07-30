@@ -1,0 +1,51 @@
+.reaction-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.selector-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reaction-selector h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.reaction-dropdown {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.reaction-description {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 4px solid #4a90e2;
+}
+
+.reaction-description p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+  color: #555;
+}
+
+.reaction-equation {
+  font-family: 'Courier New', monospace;
+  background-color: #e9f5ff;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #333;
+}
