@@ -71,6 +71,41 @@ export const reactionTypes = [
         ]
       },
       {
+        title: 'Electron Interaction',
+        description: 'The lone pair electrons on the nucleophile begin to interact with the empty orbital on the carbon atom, while the C-Br bonding electrons start to shift.',
+        keyPoints: [
+          'The nucleophile\'s lone pair electrons are attracted to the carbon\'s empty orbital.',
+          'The C-Br bond electrons begin to move toward the bromine atom.',
+          'This electron movement initiates the bond formation and breaking process.',
+        ],
+        energyChange: 'Energy continues to increase as electron reorganization begins.',
+        molecules: [
+          {
+            // Showing electron interaction with visual cues
+            atoms: [
+              { element: 'C', position: [0.5, 0, 0], showLabel: true },
+              { element: 'H', position: [0.5, 1, 0] },
+              { element: 'H', position: [1.44, -0.5, 0] },
+              { element: 'H', position: [-0.44, -0.5, 0] },
+              { element: 'Br', position: [0.5, -1.6, 0], showLabel: true },
+              { element: 'Cl', position: [-0.5, 0, 0], showLabel: true }
+            ],
+            bonds: [
+              { from: 0, to: 1 },
+              { from: 0, to: 2 },
+              { from: 0, to: 3 },
+              { from: 0, to: 4, color: '#ffaa88' }, // Slightly weakening bond (light red)
+              { from: 0, to: 5, color: '#aaffaa' }  // Beginning to form bond (light green)
+            ],
+            electrons: [
+              { atomIndex: 0, count: 4, highlight: true }, // Carbon electrons
+              { atomIndex: 4, count: 7, highlight: true }, // Bromine electrons
+              { atomIndex: 5, count: 7, highlight: true }  // Attacking chlorine electrons
+            ]
+          }
+        ]
+      },
+      {
         title: 'Transition State',
         description: 'A transition state forms where the nucleophile begins forming a bond with the carbon while the carbon-leaving group bond begins to break.',
         keyPoints: [
@@ -207,6 +242,40 @@ export const reactionTypes = [
         ]
       },
       {
+        title: 'Electron Donation',
+        description: 'The lone pair electrons on the nitrogen begin to interact with the hydrogen, while the H-Cl bonding electrons start to move toward chlorine.',
+        keyPoints: [
+          'The nitrogen\'s lone pair electrons are donated toward the hydrogen atom.',
+          'The H-Cl bond electrons begin to shift toward the chlorine atom.',
+          'This electron movement facilitates the proton transfer process.',
+        ],
+        energyChange: 'Energy increases as electron reorganization occurs.',
+        molecules: [
+          {
+            // Showing electron donation with visual cues
+            atoms: [
+              { element: 'H', position: [-0.4, 0, 0], showLabel: true },
+              { element: 'Cl', position: [-1.4, 0, 0], showLabel: true },
+              { element: 'N', position: [0.8, 0, 0], showLabel: true },
+              { element: 'H', position: [1.3, 0.87, 0] },
+              { element: 'H', position: [1.3, -0.87, 0] },
+              { element: 'H', position: [-0.2, 0, 0] }
+            ],
+            bonds: [
+              { from: 0, to: 1, color: '#ffaa88' }, // Weakening H-Cl bond (light red)
+              { from: 0, to: 2, color: '#aaffaa' }, // Forming N-H bond (light green)
+              { from: 2, to: 3 },
+              { from: 2, to: 4 },
+              { from: 2, to: 5 }
+            ],
+            electrons: [
+              { atomIndex: 1, count: 7, highlight: true }, // Chlorine electrons
+              { atomIndex: 2, count: 5, highlight: true }  // Nitrogen lone pair
+            ]
+          }
+        ]
+      },
+      {
         title: 'Transition State',
         description: 'A transition state forms where the proton is partially bonded to both the acid and the base.',
         keyPoints: [
@@ -325,6 +394,34 @@ export const reactionTypes = [
             ],
             bonds: [
               { from: 1, to: 2 }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Electron Mobilization',
+        description: 'The valence electron from sodium begins to move toward the chlorine molecule, while the Cl-Cl bond starts to weaken in preparation for electron acceptance.',
+        keyPoints: [
+          'Sodium\'s valence electron becomes more mobile and starts moving toward chlorine.',
+          'The Cl-Cl bond begins to polarize as it prepares to accept the electron.',
+          'This represents the beginning of the oxidation-reduction process.',
+        ],
+        energyChange: 'Energy increases as electron reorganization begins.',
+        molecules: [
+          {
+            // Showing electron mobilization with visual cues
+            atoms: [
+              { element: 'Na', position: [-0.7, 0, 0], showLabel: true },
+              { element: 'Cl', position: [0.3, 0, 0], showLabel: true },
+              { element: 'Cl', position: [1.3, 0, 0], showLabel: true }
+            ],
+            bonds: [
+              { from: 1, to: 2, color: '#ffaa88' } // Weakening Cl-Cl bond (light red)
+            ],
+            electrons: [
+              { atomIndex: 0, count: 1, highlight: true }, // Sodium valence electron
+              { atomIndex: 1, count: 7, highlight: true }, // Chlorine electrons
+              { atomIndex: 2, count: 7, highlight: true }  // Chlorine electrons
             ]
           }
         ]

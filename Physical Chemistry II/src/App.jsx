@@ -10,10 +10,12 @@ import './components/ReactionSelector.css';
 import './components/InfoPanel.css';
 
 function App() {
-  const [selectedReaction, setSelectedReaction] = useState(null);
+  const [selectedReaction, setSelectedReaction] = useState(reactionTypes[0]);
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [freezeAtStepStart, setFreezeAtStepStart] = useState(true);
+  const [freezeAtStepStart, setFreezeAtStepStart] = useState(false);
+  const [showElectrons, setShowElectrons] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1.0);
   
   const handleReactionChange = (reactionId) => {
     const reaction = reactionTypes.find(r => r.id === reactionId);
@@ -42,6 +44,23 @@ function App() {
   
   const toggleFreezeOption = () => {
     setFreezeAtStepStart(!freezeAtStepStart);
+  };
+
+  const toggleElectrons = () => {
+    setShowElectrons(!showElectrons);
+  };
+
+  // Zoom control functions
+  const handleZoomIn = () => {
+    setZoomLevel(prev => Math.min(prev + 0.5, 5.0));
+  };
+  
+  const handleZoomOut = () => {
+    setZoomLevel(prev => Math.max(prev - 0.5, 0.5));
+  };
+  
+  const handleResetView = () => {
+    setZoomLevel(1.0);
   };
 
   return (
@@ -124,7 +143,92 @@ function App() {
         
         <div className="right-panel">
           <div className="visualization-and-info">
-            <div className="visualization-container">
+            <div className="visualization-container" style={{ position: 'relative' }}>
+              {selectedReaction && (
+                <div style={{
+                  position: 'absolute',
+                  top: '10%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  display: 'flex',
+                  gap: '10px',
+                  alignItems: 'center',
+                  zIndex: 1000
+                }}>
+                  <button 
+                    onClick={toggleElectrons}
+                    style={{
+                      padding: '6px 12px',
+                      backgroundColor: showElectrons ? '#FF5722' : '#9C27B0',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontSize: '12px',
+                      fontWeight: '500'
+                    }}
+                  >
+                    {showElectrons ? 'Hide Electrons' : 'Show Electrons'}
+                  </button>
+                  <button 
+                    onClick={handleZoomIn}
+                    style={{
+                      padding: '6px 10px',
+                      backgroundColor: '#4CAF50',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontSize: '12px',
+                      fontWeight: '500'
+                    }}
+                  >
+                    Zoom In
+                  </button>
+                  <button 
+                    onClick={handleZoomOut}
+                    style={{
+                      padding: '6px 10px',
+                      backgroundColor: '#2196F3',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontSize: '12px',
+                      fontWeight: '500'
+                    }}
+                  >
+                    Zoom Out
+                  </button>
+                  <button 
+                    onClick={handleResetView}
+                    style={{
+                      padding: '6px 10px',
+                      backgroundColor: '#FF9800',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontSize: '12px',
+                      fontWeight: '500'
+                    }}
+                  >
+                    Reset
+                  </button>
+                  <div style={{
+                    padding: '4px 8px',
+                    backgroundColor: 'rgba(0,0,0,0.8)',
+                    color: 'white',
+                    borderRadius: '4px',
+                    fontSize: '11px',
+                    fontWeight: '500',
+                    minWidth: '50px',
+                    textAlign: 'center'
+                  }}>
+                    {zoomLevel.toFixed(1)}x
+                  </div>
+                </div>
+              )}
               <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
                 <ambientLight intensity={0.5} />
                 <pointLight position={[10, 10, 10]} intensity={1} />
@@ -134,6 +238,8 @@ function App() {
                     moleculeData={selectedReaction.steps[currentStep].molecules} 
                     isPlaying={isPlaying}
                     freezeAtStepStart={freezeAtStepStart}
+                    showElectrons={showElectrons}
+                    zoomLevel={zoomLevel}
                     onStepComplete={() => {
                       if (currentStep < selectedReaction.steps.length - 1) {
                         setCurrentStep(currentStep + 1);
