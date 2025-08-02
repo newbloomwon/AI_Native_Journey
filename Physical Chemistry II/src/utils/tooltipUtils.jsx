@@ -32,6 +32,36 @@ const TECHNICAL_TERMS = [
   'energy barrier',
   'baseline energy',
   'energy level',
+  // Free Radical Chain Reaction terms
+  'radical',
+  'radicals',
+  'initiation',
+  'propagation',
+  'termination',
+  'homolytic cleavage',
+  'homolytically',
+  'chlorine molecule',
+  'chlorine radicals',
+  'chlorine radical',
+  'electron',
+  'electrons',
+  'covalent bond',
+  'unpaired electrons',
+  'unpaired electron',
+  'reactive',
+  'molecules',
+  'methane',
+  'abstracting',
+  'abstracts',
+  'hydrogen atom',
+  'hydrogen',
+  'hydrogen chloride',
+  'methyl radical',
+  'exothermic',
+  'chain reaction',
+  'chain',
+  'methyl chloride',
+  'product',
 ];
 
 /**
@@ -45,6 +75,58 @@ export const wrapWithTooltips = (text, className = '') => {
     return text;
   }
 
+  // First, handle explicit <tooltip> tags
+  const tooltipTagPattern = /<tooltip[^>]*>([^<]+)<\/tooltip>/gi;
+  let processedText = text;
+  const parts = [];
+  let lastIndex = 0;
+  let keyCounter = 0;
+  let match;
+
+  // Process explicit tooltip tags first
+  while ((match = tooltipTagPattern.exec(text)) !== null) {
+    // Add text before the match
+    if (match.index > lastIndex) {
+      const beforeText = text.slice(lastIndex, match.index);
+      parts.push(...processAutoTooltips(beforeText, className, keyCounter));
+      keyCounter += countTooltips(beforeText);
+    }
+
+    // Add the tooltip-wrapped term
+    const tooltipContent = match[1];
+    parts.push(
+      <Tooltip
+        key={`tooltip-${keyCounter++}`}
+        term={tooltipContent}
+        className={className}
+      >
+        {tooltipContent}
+      </Tooltip>,
+    );
+
+    lastIndex = tooltipTagPattern.lastIndex;
+  }
+
+  // Add remaining text after the last tooltip tag
+  if (lastIndex < text.length) {
+    const remainingText = text.slice(lastIndex);
+    parts.push(...processAutoTooltips(remainingText, className, keyCounter));
+  }
+
+  // If no explicit tooltip tags were found, process the entire text for auto-tooltips
+  if (parts.length === 0) {
+    return processAutoTooltips(text, className, 0);
+  }
+
+  return parts.length > 1 ? parts : text;
+};
+
+// Helper function to process automatic tooltips for a text segment
+const processAutoTooltips = (text, className, startKeyCounter) => {
+  if (!text || typeof text !== 'string') {
+    return [text];
+  }
+
   // Create a regex pattern that matches any of the technical terms
   // Sort by length (longest first) to match longer terms before shorter ones
   const sortedTerms = [...TECHNICAL_TERMS].sort((a, b) => b.length - a.length);
@@ -55,7 +137,7 @@ export const wrapWithTooltips = (text, className = '') => {
   const parts = [];
   let lastIndex = 0;
   let match;
-  let keyCounter = 0;
+  let keyCounter = startKeyCounter;
 
   while ((match = pattern.exec(text)) !== null) {
     // Add text before the match
@@ -83,7 +165,18 @@ export const wrapWithTooltips = (text, className = '') => {
     parts.push(text.slice(lastIndex));
   }
 
-  return parts.length > 1 ? parts : text;
+  return parts.length > 0 ? parts : [text];
+};
+
+// Helper function to count tooltips in a text segment
+const countTooltips = (text) => {
+  const sortedTerms = [...TECHNICAL_TERMS].sort((a, b) => b.length - a.length);
+  const pattern = new RegExp(`\\b(${sortedTerms.map(term =>
+    term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'),
+  ).join('|')})\\b`, 'gi');
+  
+  const matches = text.match(pattern);
+  return matches ? matches.length : 0;
 };
 
 /**

@@ -75,7 +75,7 @@ const Bond = ({ start, end, color = '#FFFFFF' }) => {
   );
 };
 
-const Electron = ({ position, isMoving = false, targetPosition = null, highlighted = false }) => {
+const Electron = ({ position, isMoving = false, targetPosition = null, highlighted = false, isUnpaired = false, isRadical = false }) => {
   const electronRef = useRef();
   const [currentPos, setCurrentPos] = useState(position);
 
@@ -97,27 +97,49 @@ const Electron = ({ position, isMoving = false, targetPosition = null, highlight
       electronRef.current.position.set(...newPos);
     }
 
-    // Add pulsing effect for highlighted electrons
-    if (highlighted && electronRef.current) {
-      const pulse = Math.sin(state.clock.elapsedTime * 3) * 0.02 + 1;
-      electronRef.current.scale.setScalar(pulse);
+    // Add pulsing effect for highlighted electrons or radical electrons
+    if (electronRef.current && (highlighted || isUnpaired || isRadical)) {
+      const time = state.clock.getElapsedTime();
+      const pulseFactor = isUnpaired || isRadical ? 2.0 : 1.0; // Faster pulse for radicals
+      const scale = 1 + 0.3 * Math.sin(time * pulseFactor * 3);
+      electronRef.current.scale.setScalar(scale);
     }
   });
 
-  const electronColor = highlighted ? '#FF4444' : '#FFD700';
-  const emissiveIntensity = highlighted ? 0.6 : 0.3;
+  // Determine electron color based on type
+  const getElectronColor = () => {
+    if (isUnpaired || isRadical) return '#ff4444'; // Red for unpaired/radical electrons
+    if (highlighted) return '#ffff00'; // Yellow for highlighted electrons
+    return '#ff0000'; // Default red for paired electrons
+  };
+
+  const getElectronEmissive = () => {
+    if (isUnpaired || isRadical) return '#441111'; // Dim red emissive for radicals
+    if (highlighted) return '#444400'; // Dim yellow emissive for highlighted
+    return '#440000'; // Default dim red emissive
+  };
 
   return (
     <group ref={electronRef} position={currentPos}>
-      <Sphere args={[0.08, 12, 12]}>
-        <meshStandardMaterial
-          color={electronColor}
-          emissive={electronColor}
-          emissiveIntensity={emissiveIntensity}
+      <Sphere args={[isUnpaired || isRadical ? 0.08 : 0.05, 8, 8]}>
+        <meshStandardMaterial 
+          color={getElectronColor()} 
+          emissive={getElectronEmissive()}
           roughness={0.1}
           metalness={0.8}
         />
       </Sphere>
+      {/* Add a glowing effect for unpaired electrons */}
+      {(isUnpaired || isRadical) && (
+        <Sphere args={[0.12, 8, 8]}>
+          <meshStandardMaterial 
+            color="#ff4444" 
+            transparent
+            opacity={0.3}
+            emissive="#ff2222"
+          />
+        </Sphere>
+      )}
     </group>
   );
 };
@@ -172,6 +194,42 @@ const MoleculeViewer = ({ moleculeData, isPlaying, freezeAtStepStart, onStepComp
     moleculeData.forEach((molecule, moleculeIndex) => {
       // Check if molecule has specific electron data
       const electronData = molecule.electrons || [];
+      const unpairedElectrons = molecule.unpairedElectrons || [];
+      const radicals = molecule.radicals || [];
+      const bonds = molecule.bonds || [];
+
+      // Generate bond electrons
+      bonds.forEach((bond, bondIndex) => {
+        const atom1 = molecule.atoms[bond.from];
+        const atom2 = molecule.atoms[bond.to];
+        
+        if (atom1 && atom2) {
+          const midpoint = [
+            (atom1.position[0] + atom2.position[0]) / 2,
+            (atom1.position[1] + atom2.position[1]) / 2,
+            (atom1.position[2] + atom2.position[2]) / 2,
+          ];
+          
+          // Add electrons based on bond order (default to 1 if not specified)
+          const bondOrder = bond.order || 1;
+          for (let i = 0; i < bondOrder * 2; i++) {
+            const offset = (i % 2 === 0) ? 0.1 : -0.1;
+            electrons.push({
+              id: `bond-${moleculeIndex}-${bondIndex}-electron-${i}`,
+              position: [
+                midpoint[0] + offset,
+                midpoint[1],
+                midpoint[2],
+              ],
+              atomIndex: null,
+              moleculeIndex: moleculeIndex,
+              highlighted: bond.highlighted || false,
+              isUnpaired: false,
+              isRadical: false,
+            });
+          }
+        }
+      });
 
       molecule.atoms.forEach((atom, atomIndex) => {
         // Find specific electron info for this atom
@@ -193,6 +251,48 @@ const MoleculeViewer = ({ moleculeData, isPlaying, freezeAtStepStart, onStepComp
             atomIndex: atomIndex,
             moleculeIndex: moleculeIndex,
             highlighted: isHighlighted,
+            isUnpaired: false,
+            isRadical: false,
+          });
+        }
+      });
+
+      // Generate unpaired electrons
+      unpairedElectrons.forEach((unpaired, index) => {
+        const atom = molecule.atoms[unpaired.atomIndex];
+        if (atom) {
+          electrons.push({
+            id: `unpaired-${moleculeIndex}-${index}`,
+            position: [
+              atom.position[0] + (unpaired.offset?.[0] || 0.3),
+              atom.position[1] + (unpaired.offset?.[1] || 0.3),
+              atom.position[2] + (unpaired.offset?.[2] || 0),
+            ],
+            atomIndex: unpaired.atomIndex,
+            moleculeIndex: moleculeIndex,
+            highlighted: false,
+            isUnpaired: true,
+            isRadical: false,
+          });
+        }
+      });
+
+      // Generate radical electrons
+      radicals.forEach((radical, index) => {
+        const atom = molecule.atoms[radical.atomIndex];
+        if (atom) {
+          electrons.push({
+            id: `radical-${moleculeIndex}-${index}`,
+            position: [
+              atom.position[0] + (radical.offset?.[0] || 0.4),
+              atom.position[1] + (radical.offset?.[1] || 0.4),
+              atom.position[2] + (radical.offset?.[2] || 0),
+            ],
+            atomIndex: radical.atomIndex,
+            moleculeIndex: moleculeIndex,
+            highlighted: false,
+            isUnpaired: false,
+            isRadical: true,
           });
         }
       });
@@ -245,6 +345,8 @@ const MoleculeViewer = ({ moleculeData, isPlaying, freezeAtStepStart, onStepComp
             position={electron.position}
             isMoving={isPlaying}
             highlighted={electron.highlighted}
+            isUnpaired={electron.isUnpaired}
+            isRadical={electron.isRadical}
           />
         ))}
       </group>

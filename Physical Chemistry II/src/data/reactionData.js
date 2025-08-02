@@ -478,4 +478,190 @@ export const reactionTypes = [
       },
     ],
   },
+  {
+    id: 'radical-chain',
+    name: 'Free Radical Chain Reaction',
+    description: 'A multi-step reaction involving <tooltip term="radical">radical</tooltip> intermediates that propagate through <tooltip term="initiation">initiation</tooltip>, <tooltip term="propagation">propagation</tooltip>, and <tooltip term="termination">termination</tooltip> steps.',
+    equation: 'Initiation: Cl₂ → 2Cl• | Propagation: Cl• + CH₄ → HCl + CH₃• | CH₃• + Cl₂ → CH₃Cl + Cl•',
+    steps: [
+      {
+        title: 'Initiation Step',
+        description: '<tooltip term="homolytic cleavage">Homolytic cleavage</tooltip> of <tooltip term="chlorine molecule">chlorine molecule</tooltip> produces two <tooltip term="chlorine radicals">chlorine radicals</tooltip>. Each chlorine atom gets one <tooltip term="electron">electron</tooltip> from the broken <tooltip term="covalent bond">bond</tooltip>.',
+        keyPoints: [
+          'The Cl-Cl <tooltip term="covalent bond">bond</tooltip> breaks <tooltip term="homolytically">homolytically</tooltip>, with each atom keeping one <tooltip term="electron">electron</tooltip>.',
+          'This creates two highly reactive <tooltip term="chlorine radicals">chlorine radicals</tooltip> (Cl•).',
+          'Energy input (heat or light) is required to break the <tooltip term="covalent bond">bond</tooltip>.',
+        ],
+        energyChange: 'Energy input required to break the Cl-Cl bond homolytically.',
+        molecules: [
+          {
+            // Chlorine molecule (Cl2)
+            atoms: [
+              { element: 'Cl', position: [-1, 0, 0], showLabel: true },
+              { element: 'Cl', position: [1, 0, 0], showLabel: true },
+            ],
+            bonds: [
+              { from: 0, to: 1, color: '#1FF01F' },
+            ],
+            electrons: [
+              { atomIndex: 0, count: 7, highlight: false },
+              { atomIndex: 1, count: 7, highlight: false },
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Radical Formation',
+        description: 'The <tooltip term="chlorine molecule">chlorine molecule</tooltip> <tooltip term="covalent bond">bond</tooltip> breaks, forming two separate <tooltip term="chlorine radicals">chlorine radicals</tooltip> with <tooltip term="unpaired electrons">unpaired electrons</tooltip>.',
+        keyPoints: [
+          'Two <tooltip term="chlorine radicals">chlorine radicals</tooltip> are now formed, each with an <tooltip term="unpaired electron">unpaired electron</tooltip>.',
+          'The <tooltip term="radicals">radicals</tooltip> are highly <tooltip term="reactive">reactive</tooltip> due to the <tooltip term="unpaired electron">unpaired electron</tooltip>.',
+          'These <tooltip term="radicals">radicals</tooltip> will seek to pair their <tooltip term="electrons">electrons</tooltip> by reacting with other <tooltip term="molecules">molecules</tooltip>.',
+        ],
+        energyChange: 'High energy state due to unpaired electrons on the radicals.',
+        molecules: [
+          {
+            // First chlorine radical
+            atoms: [
+              { element: 'Cl', position: [-2, 0, 0], showLabel: true },
+            ],
+            bonds: [],
+            electrons: [
+              { atomIndex: 0, count: 7, highlight: true, unpaired: 1 },
+            ],
+            radicals: [
+              { atomIndex: 0, isRadical: true },
+            ],
+          },
+          {
+            // Second chlorine radical
+            atoms: [
+              { element: 'Cl', position: [2, 0, 0], showLabel: true },
+            ],
+            bonds: [],
+            electrons: [
+              { atomIndex: 0, count: 7, highlight: true, unpaired: 1 },
+            ],
+            radicals: [
+              { atomIndex: 0, isRadical: true },
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Propagation Step 1',
+        description: 'A <tooltip term="chlorine radical">chlorine radical</tooltip> attacks <tooltip term="methane">methane</tooltip>, <tooltip term="abstracting">abstracting</tooltip> a <tooltip term="hydrogen atom">hydrogen atom</tooltip> to form <tooltip term="hydrogen chloride">HCl</tooltip> and a <tooltip term="methyl radical">methyl radical</tooltip>.',
+        keyPoints: [
+          'The <tooltip term="chlorine radical">chlorine radical</tooltip> <tooltip term="abstracts">abstracts</tooltip> a <tooltip term="hydrogen">hydrogen</tooltip> from <tooltip term="methane">methane</tooltip>.',
+          'This forms <tooltip term="hydrogen chloride">hydrogen chloride</tooltip> (HCl) and a <tooltip term="methyl radical">methyl radical</tooltip> (CH₃•).',
+          'The reaction is <tooltip term="exothermic">exothermic</tooltip> and drives the <tooltip term="chain reaction">chain reaction</tooltip> forward.',
+        ],
+        energyChange: 'Energy released as the strong H-Cl bond forms.',
+        molecules: [
+          {
+            // Methane and chlorine radical approaching
+            atoms: [
+              { element: 'C', position: [0, 0, 0], showLabel: true },
+              { element: 'H', position: [0, 1, 0] },
+              { element: 'H', position: [0.87, -0.5, 0] },
+              { element: 'H', position: [-0.87, -0.5, 0] },
+              { element: 'H', position: [0, 0, 1], showLabel: true },
+              { element: 'Cl', position: [-2, 0, 1], showLabel: true },
+            ],
+            bonds: [
+              { from: 0, to: 1 },
+              { from: 0, to: 2 },
+              { from: 0, to: 3 },
+              { from: 0, to: 4, color: '#ffaa88' }, // Weakening C-H bond
+            ],
+            electrons: [
+              { atomIndex: 0, count: 4, highlight: false },
+              { atomIndex: 5, count: 7, highlight: true, unpaired: 1 },
+            ],
+            radicals: [
+              { atomIndex: 5, isRadical: true },
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Propagation Step 2',
+        description: 'The <tooltip term="methyl radical">methyl radical</tooltip> reacts with another <tooltip term="chlorine molecule">chlorine molecule</tooltip>, forming <tooltip term="methyl chloride">methyl chloride</tooltip> and regenerating a <tooltip term="chlorine radical">chlorine radical</tooltip>.',
+        keyPoints: [
+          'The <tooltip term="methyl radical">methyl radical</tooltip> attacks a <tooltip term="chlorine molecule">chlorine molecule</tooltip>.',
+          'This forms <tooltip term="methyl chloride">methyl chloride</tooltip> (CH₃Cl) and regenerates a <tooltip term="chlorine radical">chlorine radical</tooltip>.',
+          'The regenerated <tooltip term="radical">radical</tooltip> can continue the <tooltip term="chain reaction">chain reaction</tooltip>.',
+        ],
+        energyChange: 'Energy released as the C-Cl bond forms, regenerating reactive radical.',
+        molecules: [
+          {
+            // Products: HCl and methyl radical + Cl2
+            atoms: [
+              { element: 'H', position: [-3, 0, 0], showLabel: true },
+              { element: 'Cl', position: [-4, 0, 0], showLabel: true },
+              { element: 'C', position: [0, 0, 0], showLabel: true },
+              { element: 'H', position: [0, 1, 0] },
+              { element: 'H', position: [0.87, -0.5, 0] },
+              { element: 'H', position: [-0.87, -0.5, 0] },
+              { element: 'Cl', position: [2, 0, 0], showLabel: true },
+              { element: 'Cl', position: [3, 0, 0], showLabel: true },
+            ],
+            bonds: [
+              { from: 0, to: 1 }, // HCl
+              { from: 2, to: 3 }, // CH3 radical
+              { from: 2, to: 4 },
+              { from: 2, to: 5 },
+              { from: 6, to: 7, color: '#ffaa88' }, // Cl2 about to react
+            ],
+            electrons: [
+              { atomIndex: 2, count: 4, highlight: true, unpaired: 1 }, // Methyl radical
+              { atomIndex: 6, count: 7, highlight: false },
+              { atomIndex: 7, count: 7, highlight: false },
+            ],
+            radicals: [
+              { atomIndex: 2, isRadical: true },
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Chain Propagation Products',
+        description: 'The <tooltip term="chain reaction">chain reaction</tooltip> produces <tooltip term="methyl chloride">methyl chloride</tooltip> and regenerates a <tooltip term="chlorine radical">chlorine radical</tooltip> to continue the cycle.',
+        keyPoints: [
+          '<tooltip term="Methyl chloride">Methyl chloride</tooltip> (CH₃Cl) is formed as the main <tooltip term="product">product</tooltip>.',
+          'A new <tooltip term="chlorine radical">chlorine radical</tooltip> is generated to continue the <tooltip term="chain">chain</tooltip>.',
+          'This cycle can repeat hundreds or thousands of times.',
+        ],
+        energyChange: 'Net energy release drives the overall reaction forward.',
+        molecules: [
+          {
+            // Final products of one cycle
+            atoms: [
+              { element: 'H', position: [-3, 0, 0], showLabel: true },
+              { element: 'Cl', position: [-4, 0, 0], showLabel: true },
+              { element: 'C', position: [0, 0, 0], showLabel: true },
+              { element: 'H', position: [0, 1, 0] },
+              { element: 'H', position: [0.87, -0.5, 0] },
+              { element: 'H', position: [-0.87, -0.5, 0] },
+              { element: 'Cl', position: [0, -1.5, 0], showLabel: true },
+              { element: 'Cl', position: [3, 0, 0], showLabel: true },
+            ],
+            bonds: [
+              { from: 0, to: 1 }, // HCl
+              { from: 2, to: 3 }, // CH3Cl
+              { from: 2, to: 4 },
+              { from: 2, to: 5 },
+              { from: 2, to: 6 },
+            ],
+            electrons: [
+              { atomIndex: 7, count: 7, highlight: true, unpaired: 1 }, // New Cl radical
+            ],
+            radicals: [
+              { atomIndex: 7, isRadical: true },
+            ],
+          },
+        ],
+      },
+    ],
+  }
 ];

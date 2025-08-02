@@ -4,12 +4,15 @@ import { OrbitControls } from '@react-three/drei';
 import MoleculeViewer from './components/MoleculeViewer';
 import ReactionSelector from './components/ReactionSelector';
 import InfoPanel from './components/InfoPanel';
+import GasLawSimulator from './components/GasLawSimulator';
 import { reactionTypes } from './data/reactionData';
 import './App.css';
 import './components/ReactionSelector.css';
 import './components/InfoPanel.css';
+import './components/GasLawSimulator.css';
 
 function App() {
+  const [simulatorMode, setSimulatorMode] = useState('reactions'); // 'reactions' or 'gaslaw'
   const [selectedReaction, setSelectedReaction] = useState(reactionTypes[0]);
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -66,21 +69,39 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>Molecular Dynamics Visualization</h1>
-        <p>Visualize atom and molecule interactions for better understanding of physical chemistry</p>
+        <h1>Physical Chemistry Visualization Suite</h1>
+        <p>Interactive tools for understanding molecular dynamics and thermodynamics</p>
+        
+        {/* Mode Selector */}
+        <div className="mode-selector">
+          <button
+            className={`mode-button ${simulatorMode === 'reactions' ? 'active' : ''}`}
+            onClick={() => setSimulatorMode('reactions')}
+          >
+            Molecular Reactions
+          </button>
+          <button
+            className={`mode-button ${simulatorMode === 'gaslaw' ? 'active' : ''}`}
+            onClick={() => setSimulatorMode('gaslaw')}
+          >
+            Gas Law Simulator
+          </button>
+        </div>
       </header>
 
       <main className="app-main">
-        <div className="left-panel">
-          <div className="controls-panel">
-            <ReactionSelector
-              reactions={reactionTypes}
-              selectedReaction={selectedReaction}
-              onReactionChange={handleReactionChange}
-            />
+        {simulatorMode === 'reactions' ? (
+          <>
+            <div className="left-panel">
+              <div className="controls-panel">
+                <ReactionSelector
+                  reactions={reactionTypes}
+                  selectedReaction={selectedReaction}
+                  onReactionChange={handleReactionChange}
+                />
 
-            {selectedReaction && (
-              <div className="playback-controls">
+                {selectedReaction && (
+                  <div className="playback-controls">
                 <div className="controls-top-row">
                   <div className="play-button-container">
                     <button
@@ -266,7 +287,13 @@ function App() {
             )}
           </div>
         </div>
-      </main>
+      </>
+    ) : (
+      <div className="gas-law-container">
+        <GasLawSimulator />
+      </div>
+    )}
+  </main>
 
       <footer className="app-footer">
         <p>© 2025 Molecular Dynamics Visualization Tool</p>
