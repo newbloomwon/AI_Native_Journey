@@ -16,7 +16,7 @@ function App() {
   const [freezeAtStepStart, setFreezeAtStepStart] = useState(false);
   const [showElectrons, setShowElectrons] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1.0);
-  
+
   const handleReactionChange = (reactionId) => {
     const reaction = reactionTypes.find(r => r.id === reactionId);
     setSelectedReaction(reaction);
@@ -35,13 +35,13 @@ function App() {
       setIsPlaying(false);
     }
   };
-  
+
   const handleMarkerClick = (step) => {
     // Jump to the specific step and pause at the first frame
     setCurrentStep(step);
     setIsPlaying(false);
   };
-  
+
   const toggleFreezeOption = () => {
     setFreezeAtStepStart(!freezeAtStepStart);
   };
@@ -54,11 +54,11 @@ function App() {
   const handleZoomIn = () => {
     setZoomLevel(prev => Math.min(prev + 0.5, 5.0));
   };
-  
+
   const handleZoomOut = () => {
     setZoomLevel(prev => Math.max(prev - 0.5, 0.5));
   };
-  
+
   const handleResetView = () => {
     setZoomLevel(1.0);
   };
@@ -69,58 +69,58 @@ function App() {
         <h1>Molecular Dynamics Visualization</h1>
         <p>Visualize atom and molecule interactions for better understanding of physical chemistry</p>
       </header>
-      
+
       <main className="app-main">
         <div className="left-panel">
           <div className="controls-panel">
-            <ReactionSelector 
-              reactions={reactionTypes} 
-              selectedReaction={selectedReaction} 
-              onReactionChange={handleReactionChange} 
+            <ReactionSelector
+              reactions={reactionTypes}
+              selectedReaction={selectedReaction}
+              onReactionChange={handleReactionChange}
             />
-            
+
             {selectedReaction && (
               <div className="playback-controls">
-                  <div className="controls-top-row">
-                    <div className="play-button-container">
-                      <button 
-                        onClick={handlePlayPause} 
-                        className="play-button"
-                        data-testid="play-button"
-                      >
-                        {isPlaying ? 'Pause' : 'Play'}
-                      </button>
-                    </div>
-                    <div className="freeze-toggle-container">
-                      <label className="freeze-toggle-label">
-                        <input 
-                          type="checkbox" 
-                          checked={freezeAtStepStart} 
-                          onChange={toggleFreezeOption} 
-                          className="freeze-toggle-input"
-                          data-testid="freeze-toggle"
-                        />
-                        <span className="freeze-toggle-text">Freeze at step start</span>
-                      </label>
-                    </div>
+                <div className="controls-top-row">
+                  <div className="play-button-container">
+                    <button
+                      onClick={handlePlayPause}
+                      className="play-button"
+                      data-testid="play-button"
+                    >
+                      {isPlaying ? 'Pause' : 'Play'}
+                    </button>
                   </div>
+                  <div className="freeze-toggle-container">
+                    <label className="freeze-toggle-label">
+                      <input
+                        type="checkbox"
+                        checked={freezeAtStepStart}
+                        onChange={toggleFreezeOption}
+                        className="freeze-toggle-input"
+                        data-testid="freeze-toggle"
+                      />
+                      <span className="freeze-toggle-text">Freeze at step start</span>
+                    </label>
+                  </div>
+                </div>
                 <div className="step-controls">
                   <div className="step-slider-container">
-                    <input 
-                      type="range" 
-                      min="0" 
-                      max={selectedReaction.steps.length - 1} 
+                    <input
+                      type="range"
+                      min="0"
+                      max={selectedReaction.steps.length - 1}
                       value={currentStep}
                       onChange={(e) => handleStepChange(parseInt(e.target.value))}
                       className="step-slider"
                     />
                     <div className="step-markers">
                       {selectedReaction.steps.map((step, index) => (
-                        <div 
+                        <div
                           key={`marker-${index}`}
                           className={`step-marker ${currentStep === index ? 'active' : ''}`}
-                          style={{ 
-                            left: `${(index / (selectedReaction.steps.length - 1)) * 100}%` 
+                          style={{
+                            left: `${(index / (selectedReaction.steps.length - 1)) * 100}%`,
                           }}
                           data-testid={`step-marker-${index}`}
                           onClick={() => handleMarkerClick(index)}
@@ -140,7 +140,7 @@ function App() {
             )}
           </div>
         </div>
-        
+
         <div className="right-panel">
           <div className="visualization-and-info">
             <div className="visualization-container" style={{ position: 'relative' }}>
@@ -153,9 +153,9 @@ function App() {
                   display: 'flex',
                   gap: '10px',
                   alignItems: 'center',
-                  zIndex: 1000
+                  zIndex: 1000,
                 }}>
-                  <button 
+                  <button
                     onClick={toggleElectrons}
                     style={{
                       padding: '6px 12px',
@@ -165,12 +165,12 @@ function App() {
                       borderRadius: '4px',
                       cursor: 'pointer',
                       fontSize: '12px',
-                      fontWeight: '500'
+                      fontWeight: '500',
                     }}
                   >
                     {showElectrons ? 'Hide Electrons' : 'Show Electrons'}
                   </button>
-                  <button 
+                  <button
                     onClick={handleZoomIn}
                     style={{
                       padding: '6px 10px',
@@ -180,12 +180,12 @@ function App() {
                       borderRadius: '4px',
                       cursor: 'pointer',
                       fontSize: '12px',
-                      fontWeight: '500'
+                      fontWeight: '500',
                     }}
                   >
                     Zoom In
                   </button>
-                  <button 
+                  <button
                     onClick={handleZoomOut}
                     style={{
                       padding: '6px 10px',
@@ -195,12 +195,12 @@ function App() {
                       borderRadius: '4px',
                       cursor: 'pointer',
                       fontSize: '12px',
-                      fontWeight: '500'
+                      fontWeight: '500',
                     }}
                   >
                     Zoom Out
                   </button>
-                  <button 
+                  <button
                     onClick={handleResetView}
                     style={{
                       padding: '6px 10px',
@@ -210,7 +210,7 @@ function App() {
                       borderRadius: '4px',
                       cursor: 'pointer',
                       fontSize: '12px',
-                      fontWeight: '500'
+                      fontWeight: '500',
                     }}
                   >
                     Reset
@@ -223,7 +223,7 @@ function App() {
                     fontSize: '11px',
                     fontWeight: '500',
                     minWidth: '50px',
-                    textAlign: 'center'
+                    textAlign: 'center',
                   }}>
                     {zoomLevel.toFixed(1)}x
                   </div>
@@ -234,8 +234,8 @@ function App() {
                 <pointLight position={[10, 10, 10]} intensity={1} />
                 <OrbitControls />
                 {selectedReaction && (
-                  <MoleculeViewer 
-                    moleculeData={selectedReaction.steps[currentStep].molecules} 
+                  <MoleculeViewer
+                    moleculeData={selectedReaction.steps[currentStep].molecules}
                     isPlaying={isPlaying}
                     freezeAtStepStart={freezeAtStepStart}
                     showElectrons={showElectrons}
@@ -255,10 +255,10 @@ function App() {
                 )}
               </Canvas>
             </div>
-            
+
             {selectedReaction && (
               <div className="reaction-info-container">
-                <InfoPanel 
+                <InfoPanel
                   reactionInfo={selectedReaction}
                   currentStep={currentStep}
                 />
@@ -267,7 +267,7 @@ function App() {
           </div>
         </div>
       </main>
-      
+
       <footer className="app-footer">
         <p>© 2025 Molecular Dynamics Visualization Tool</p>
       </footer>

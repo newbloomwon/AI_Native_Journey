@@ -23,23 +23,23 @@ export const reactionTypes = [
               { element: 'H', position: [2, 1, 0] },
               { element: 'H', position: [2.94, -0.5, 0] },
               { element: 'H', position: [1.06, -0.5, 0] },
-              { element: 'Br', position: [2, -1.5, 0], showLabel: true }
+              { element: 'Br', position: [2, -1.5, 0], showLabel: true },
             ],
             bonds: [
               { from: 0, to: 1 },
               { from: 0, to: 2 },
               { from: 0, to: 3 },
-              { from: 0, to: 4 }
-            ]
+              { from: 0, to: 4 },
+            ],
           },
           {
             // Chloride ion (Cl-)
             atoms: [
-              { element: 'Cl', position: [-2, 0, 0], showLabel: true }
+              { element: 'Cl', position: [-2, 0, 0], showLabel: true },
             ],
-            bonds: []
-          }
-        ]
+            bonds: [],
+          },
+        ],
       },
       {
         title: 'Approach',
@@ -59,16 +59,16 @@ export const reactionTypes = [
               { element: 'H', position: [1.94, -0.5, 0] },
               { element: 'H', position: [0.06, -0.5, 0] },
               { element: 'Br', position: [1, -1.5, 0], showLabel: true },
-              { element: 'Cl', position: [-1, 0, 0], showLabel: true }
+              { element: 'Cl', position: [-1, 0, 0], showLabel: true },
             ],
             bonds: [
               { from: 0, to: 1 },
               { from: 0, to: 2 },
               { from: 0, to: 3 },
-              { from: 0, to: 4 }
-            ]
-          }
-        ]
+              { from: 0, to: 4 },
+            ],
+          },
+        ],
       },
       {
         title: 'Electron Interaction',
@@ -88,22 +88,22 @@ export const reactionTypes = [
               { element: 'H', position: [1.44, -0.5, 0] },
               { element: 'H', position: [-0.44, -0.5, 0] },
               { element: 'Br', position: [0.5, -1.6, 0], showLabel: true },
-              { element: 'Cl', position: [-0.5, 0, 0], showLabel: true }
+              { element: 'Cl', position: [-0.5, 0, 0], showLabel: true },
             ],
             bonds: [
               { from: 0, to: 1 },
               { from: 0, to: 2 },
               { from: 0, to: 3 },
               { from: 0, to: 4, color: '#ffaa88' }, // Slightly weakening bond (light red)
-              { from: 0, to: 5, color: '#aaffaa' }  // Beginning to form bond (light green)
+              { from: 0, to: 5, color: '#aaffaa' },  // Beginning to form bond (light green)
             ],
             electrons: [
               { atomIndex: 0, count: 4, highlight: true }, // Carbon electrons
               { atomIndex: 4, count: 7, highlight: true }, // Bromine electrons
-              { atomIndex: 5, count: 7, highlight: true }  // Attacking chlorine electrons
-            ]
-          }
-        ]
+              { atomIndex: 5, count: 7, highlight: true },  // Attacking chlorine electrons
+            ],
+          },
+        ],
       },
       {
         title: 'Transition State',
@@ -123,17 +123,17 @@ export const reactionTypes = [
               { element: 'H', position: [0.87, -0.5, 0] },
               { element: 'H', position: [-0.87, -0.5, 0] },
               { element: 'Br', position: [0, -1.8, 0], showLabel: true },
-              { element: 'Cl', position: [0, 1.8, 0], showLabel: true }
+              { element: 'Cl', position: [0, 1.8, 0], showLabel: true },
             ],
             bonds: [
               { from: 0, to: 1 },
               { from: 0, to: 2 },
               { from: 0, to: 3 },
               { from: 0, to: 4, color: '#ff8888' }, // Weakening bond (red)
-              { from: 0, to: 5, color: '#88ff88' }  // Forming bond (green)
-            ]
-          }
-        ]
+              { from: 0, to: 5, color: '#88ff88' },  // Forming bond (green)
+            ],
+          },
+        ],
       },
       {
         title: 'Product Formation',
@@ -152,25 +152,25 @@ export const reactionTypes = [
               { element: 'H', position: [-1, 1, 0] },
               { element: 'H', position: [-0.06, -0.5, 0] },
               { element: 'H', position: [-1.94, -0.5, 0] },
-              { element: 'Cl', position: [-1, -1.5, 0], showLabel: true }
+              { element: 'Cl', position: [-1, -1.5, 0], showLabel: true },
             ],
             bonds: [
               { from: 0, to: 1 },
               { from: 0, to: 2 },
               { from: 0, to: 3 },
-              { from: 0, to: 4 }
-            ]
+              { from: 0, to: 4 },
+            ],
           },
           {
             // Bromide ion (Br-)
             atoms: [
-              { element: 'Br', position: [2, 0, 0], showLabel: true }
+              { element: 'Br', position: [2, 0, 0], showLabel: true },
             ],
-            bonds: []
-          }
-        ]
-      }
-    ]
+            bonds: [],
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'acid-base',
@@ -191,11 +191,11 @@ export const reactionTypes = [
             // Acid (HA) - Using HCl as example
             atoms: [
               { element: 'H', position: [-1.5, 0, 0], showLabel: true },
-              { element: 'Cl', position: [-2.5, 0, 0], showLabel: true }
+              { element: 'Cl', position: [-2.5, 0, 0], showLabel: true },
             ],
             bonds: [
-              { from: 0, to: 1 }
-            ]
+              { from: 0, to: 1 },
+            ],
           },
           {
             // Base (B) - Using NH3 as example
@@ -203,15 +203,15 @@ export const reactionTypes = [
               { element: 'N', position: [2, 0, 0], showLabel: true },
               { element: 'H', position: [2.5, 0.87, 0] },
               { element: 'H', position: [2.5, -0.87, 0] },
-              { element: 'H', position: [1, 0, 0] }
+              { element: 'H', position: [1, 0, 0] },
             ],
             bonds: [
               { from: 0, to: 1 },
               { from: 0, to: 2 },
-              { from: 0, to: 3 }
-            ]
-          }
-        ]
+              { from: 0, to: 3 },
+            ],
+          },
+        ],
       },
       {
         title: 'Approach',
@@ -230,16 +230,16 @@ export const reactionTypes = [
               { element: 'N', position: [1, 0, 0], showLabel: true },
               { element: 'H', position: [1.5, 0.87, 0] },
               { element: 'H', position: [1.5, -0.87, 0] },
-              { element: 'H', position: [0, 0, 0] }
+              { element: 'H', position: [0, 0, 0] },
             ],
             bonds: [
               { from: 0, to: 1 },
               { from: 2, to: 3 },
               { from: 2, to: 4 },
-              { from: 2, to: 5 }
-            ]
-          }
-        ]
+              { from: 2, to: 5 },
+            ],
+          },
+        ],
       },
       {
         title: 'Electron Donation',
@@ -259,21 +259,21 @@ export const reactionTypes = [
               { element: 'N', position: [0.8, 0, 0], showLabel: true },
               { element: 'H', position: [1.3, 0.87, 0] },
               { element: 'H', position: [1.3, -0.87, 0] },
-              { element: 'H', position: [-0.2, 0, 0] }
+              { element: 'H', position: [-0.2, 0, 0] },
             ],
             bonds: [
               { from: 0, to: 1, color: '#ffaa88' }, // Weakening H-Cl bond (light red)
               { from: 0, to: 2, color: '#aaffaa' }, // Forming N-H bond (light green)
               { from: 2, to: 3 },
               { from: 2, to: 4 },
-              { from: 2, to: 5 }
+              { from: 2, to: 5 },
             ],
             electrons: [
               { atomIndex: 1, count: 7, highlight: true }, // Chlorine electrons
-              { atomIndex: 2, count: 5, highlight: true }  // Nitrogen lone pair
-            ]
-          }
-        ]
+              { atomIndex: 2, count: 5, highlight: true },  // Nitrogen lone pair
+            ],
+          },
+        ],
       },
       {
         title: 'Transition State',
@@ -293,17 +293,17 @@ export const reactionTypes = [
               { element: 'N', position: [1, 0, 0], showLabel: true },
               { element: 'H', position: [1.5, 0.87, 0] },
               { element: 'H', position: [1.5, -0.87, 0] },
-              { element: 'H', position: [1.5, 0, 0.87] }
+              { element: 'H', position: [1.5, 0, 0.87] },
             ],
             bonds: [
               { from: 0, to: 1, color: '#ff8888' }, // Weakening bond (red)
               { from: 0, to: 2, color: '#88ff88' }, // Forming bond (green)
               { from: 2, to: 3 },
               { from: 2, to: 4 },
-              { from: 2, to: 5 }
-            ]
-          }
-        ]
+              { from: 2, to: 5 },
+            ],
+          },
+        ],
       },
       {
         title: 'Product Formation',
@@ -318,9 +318,9 @@ export const reactionTypes = [
           {
             // Conjugate base (A-) - Cl-
             atoms: [
-              { element: 'Cl', position: [-2, 0, 0], showLabel: true }
+              { element: 'Cl', position: [-2, 0, 0], showLabel: true },
             ],
-            bonds: []
+            bonds: [],
           },
           {
             // Conjugate acid (HB+) - NH4+
@@ -329,18 +329,18 @@ export const reactionTypes = [
               { element: 'H', position: [2.5, 0.87, 0] },
               { element: 'H', position: [2.5, -0.87, 0] },
               { element: 'H', position: [1, 0, 0] },
-              { element: 'H', position: [2.5, 0, 0.87] }
+              { element: 'H', position: [2.5, 0, 0.87] },
             ],
             bonds: [
               { from: 0, to: 1 },
               { from: 0, to: 2 },
               { from: 0, to: 3 },
-              { from: 0, to: 4 }
-            ]
-          }
-        ]
-      }
-    ]
+              { from: 0, to: 4 },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'redox',
@@ -360,21 +360,21 @@ export const reactionTypes = [
           {
             // Reducing agent (Na)
             atoms: [
-              { element: 'Na', position: [-2, 0, 0], showLabel: true }
+              { element: 'Na', position: [-2, 0, 0], showLabel: true },
             ],
-            bonds: []
+            bonds: [],
           },
           {
             // Oxidizing agent (Cl2)
             atoms: [
               { element: 'Cl', position: [1.5, 0, 0], showLabel: true },
-              { element: 'Cl', position: [2.5, 0, 0], showLabel: true }
+              { element: 'Cl', position: [2.5, 0, 0], showLabel: true },
             ],
             bonds: [
-              { from: 0, to: 1 }
-            ]
-          }
-        ]
+              { from: 0, to: 1 },
+            ],
+          },
+        ],
       },
       {
         title: 'Approach',
@@ -390,13 +390,13 @@ export const reactionTypes = [
             atoms: [
               { element: 'Na', position: [-1, 0, 0], showLabel: true },
               { element: 'Cl', position: [0.5, 0, 0], showLabel: true },
-              { element: 'Cl', position: [1.5, 0, 0], showLabel: true }
+              { element: 'Cl', position: [1.5, 0, 0], showLabel: true },
             ],
             bonds: [
-              { from: 1, to: 2 }
-            ]
-          }
-        ]
+              { from: 1, to: 2 },
+            ],
+          },
+        ],
       },
       {
         title: 'Electron Mobilization',
@@ -413,18 +413,18 @@ export const reactionTypes = [
             atoms: [
               { element: 'Na', position: [-0.7, 0, 0], showLabel: true },
               { element: 'Cl', position: [0.3, 0, 0], showLabel: true },
-              { element: 'Cl', position: [1.3, 0, 0], showLabel: true }
+              { element: 'Cl', position: [1.3, 0, 0], showLabel: true },
             ],
             bonds: [
-              { from: 1, to: 2, color: '#ffaa88' } // Weakening Cl-Cl bond (light red)
+              { from: 1, to: 2, color: '#ffaa88' }, // Weakening Cl-Cl bond (light red)
             ],
             electrons: [
               { atomIndex: 0, count: 1, highlight: true }, // Sodium valence electron
               { atomIndex: 1, count: 7, highlight: true }, // Chlorine electrons
-              { atomIndex: 2, count: 7, highlight: true }  // Chlorine electrons
-            ]
-          }
-        ]
+              { atomIndex: 2, count: 7, highlight: true },  // Chlorine electrons
+            ],
+          },
+        ],
       },
       {
         title: 'Electron Transfer',
@@ -441,13 +441,13 @@ export const reactionTypes = [
             atoms: [
               { element: 'Na', position: [-0.5, 0, 0], showLabel: true },
               { element: 'Cl', position: [0.5, 0, 0], showLabel: true },
-              { element: 'Cl', position: [1.5, 0, 0], showLabel: true }
+              { element: 'Cl', position: [1.5, 0, 0], showLabel: true },
             ],
             bonds: [
-              { from: 1, to: 2, color: '#ff8888' } // Weakening bond (red)
-            ]
-          }
-        ]
+              { from: 1, to: 2, color: '#ff8888' }, // Weakening bond (red)
+            ],
+          },
+        ],
       },
       {
         title: 'Product Formation',
@@ -462,20 +462,20 @@ export const reactionTypes = [
           {
             // Sodium ion (Na+)
             atoms: [
-              { element: 'Na', position: [-2, 0, 0], showLabel: true }
+              { element: 'Na', position: [-2, 0, 0], showLabel: true },
             ],
-            bonds: []
+            bonds: [],
           },
           {
             // Chloride ions (Cl-)
             atoms: [
               { element: 'Cl', position: [1, 0, 0], showLabel: true },
-              { element: 'Cl', position: [3, 0, 0], showLabel: true }
+              { element: 'Cl', position: [3, 0, 0], showLabel: true },
             ],
-            bonds: []
-          }
-        ]
-      }
-    ]
-  }
+            bonds: [],
+          },
+        ],
+      },
+    ],
+  },
 ];
