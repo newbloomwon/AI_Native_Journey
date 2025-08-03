@@ -2,60 +2,71 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Text, Box } from '@react-three/drei';
 import * as THREE from 'three';
+import './GasLawSimulator.css';
 
 // Gas particle component
-function GasParticle({ position, velocity, containerBounds, temperature }) {
+function GasParticle({ position, velocity, containerBounds, temperature, pressure }) {
   const meshRef = useRef();
   const velocityRef = useRef(velocity);
   const positionRef = useRef(position);
+  const collisionCountRef = useRef(0);
 
   useFrame((state, delta) => {
     if (!meshRef.current) return;
 
-    // Update position based on velocity
-    positionRef.current[0] += velocityRef.current[0] * delta * temperature;
-    positionRef.current[1] += velocityRef.current[1] * delta * temperature;
-    positionRef.current[2] += velocityRef.current[2] * delta * temperature;
+    // Update position based on velocity and temperature
+    const speedMultiplier = temperature * 2; // Higher temperature = faster movement
+    positionRef.current[0] += velocityRef.current[0] * delta * speedMultiplier;
+    positionRef.current[1] += velocityRef.current[1] * delta * speedMultiplier;
+    positionRef.current[2] += velocityRef.current[2] * delta * speedMultiplier;
 
-    // Bounce off container walls
+    // Bounce off container walls with collision counting
     const bounds = containerBounds;
     for (let i = 0; i < 3; i++) {
       if (positionRef.current[i] > bounds[i] || positionRef.current[i] < -bounds[i]) {
         velocityRef.current[i] *= -1;
         positionRef.current[i] = Math.max(-bounds[i], Math.min(bounds[i], positionRef.current[i]));
+        collisionCountRef.current++;
       }
     }
 
     meshRef.current.position.set(...positionRef.current);
   });
 
+  // Color changes based on pressure (higher pressure = more red/energetic)
+  const particleColor = pressure > 1.5 ? '#FF5722' : pressure > 1.2 ? '#FF9800' : '#4CAF50';
+
   return (
     <mesh ref={meshRef} position={position}>
       <sphereGeometry args={[3.375, 8, 8]} />
-      <meshStandardMaterial color="#4CAF50" />
+      <meshStandardMaterial color={particleColor} />
     </mesh>
   );
 }
 
 // Container walls component
-function Container({ dimensions }) {
+function Container({ dimensions, pressure }) {
   const [width, height, depth] = dimensions;
+  
+  // Wall color intensity based on pressure (visual feedback)
+  const wallIntensity = Math.min(pressure / 2.0, 1.0);
+  const wallColor = new THREE.Color().setHSL(0.6 - (wallIntensity * 0.2), 0.8, 0.7);
   
   return (
     <group>
-      {/* Container walls - wireframe */}
+      {/* Container walls - wireframe with pressure-based color */}
       <lineSegments>
         <edgesGeometry args={[new THREE.BoxGeometry(width * 2, height * 2, depth * 2)]} />
-        <lineBasicMaterial color="#2196F3" linewidth={2} />
+        <lineBasicMaterial color={wallColor} linewidth={3} />
       </lineSegments>
       
-      {/* Semi-transparent container walls */}
+      {/* Semi-transparent container walls with pressure visualization */}
       <mesh>
         <boxGeometry args={[width * 2, height * 2, depth * 2]} />
         <meshStandardMaterial 
-          color="#E3F2FD" 
+          color={wallColor}
           transparent 
-          opacity={0.1} 
+          opacity={0.1 + (wallIntensity * 0.15)} 
           side={THREE.DoubleSide}
         />
       </mesh>
@@ -96,7 +107,7 @@ function GasVisualization({ volume, pressure, temperature, particleCount, zoomLe
 
   return (
     <group ref={groupRef}>
-      <Container dimensions={containerDimensions} />
+      <Container dimensions={containerDimensions} pressure={pressure} />
       {particles.map(particle => (
         <GasParticle
           key={particle.id}
@@ -104,20 +115,54 @@ function GasVisualization({ volume, pressure, temperature, particleCount, zoomLe
           velocity={particle.velocity}
           containerBounds={containerDimensions}
           temperature={temperature}
+          pressure={pressure}
         />
       ))}
       
-      {/* Display current values */}
+      {/* Display current values with enhanced formatting */}
       <Text
         position={[0, containerDimensions[1] + 1, 0]}
         fontSize={0.5}
-        color="#1976D2"
+        color={pressure > 1.5 ? "#FF5722" : "#1976D2"}
         anchorX="center"
         anchorY="middle"
       >
-        {`V: ${volume.toFixed(1)} L | P: ${pressure.toFixed(1)} atm`}
+        {`V: ${volume.toFixed(1)} L | P: ${pressure.toFixed(2)} atm | T: ${temperature.toFixed(1)}x`}
+      </Text>
+      
+      {/* Pressure indicator */}
+      <Text
+        position={[0, containerDimensions[1] + 0.5, 0]}
+        fontSize={0.3}
+        color={pressure > 1.5 ? "#FF5722" : pressure > 1.2 ? "#FF9800" : "#4CAF50"}
+        anchorX="center"
+        anchorY="middle"
+      >
+        {pressure > 1.5 ? "HIGH PRESSURE" : pressure > 1.2 ? "MEDIUM PRESSURE" : "LOW PRESSURE"}
       </Text>
     </group>
+  );
+}
+
+// Tooltip component for physics explanations
+function PhysicsTooltip({ children, explanation, title }) {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <div 
+      className="physics-tooltip-container"
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+      style={{ position: 'relative', display: 'inline-block' }}
+    >
+      {children}
+      {showTooltip && (
+        <div className="physics-tooltip">
+          <div className="tooltip-title">{title}</div>
+          <div className="tooltip-content">{explanation}</div>
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -196,7 +241,12 @@ const GasLawSimulator = () => {
       <div className="simulator-content">
         <div className="controls-panel">
           <div className="control-group">
-            <label htmlFor="volume-slider">Volume (L):</label>
+            <PhysicsTooltip 
+              title="Volume Control" 
+              explanation="Volume is the amount of space the gas occupies. When you decrease volume (compress the gas), particles have less space to move around, leading to more frequent collisions with container walls and higher pressure."
+            >
+              <label htmlFor="volume-slider">Volume (L): ℹ️</label>
+            </PhysicsTooltip>
             <input
               id="volume-slider"
               type="range"
@@ -212,12 +262,22 @@ const GasLawSimulator = () => {
           </div>
 
           <div className="control-group">
-            <label>Pressure (atm):</label>
+            <PhysicsTooltip 
+              title="Pressure (Calculated)" 
+              explanation="Pressure is the force per unit area exerted by gas particles hitting container walls. According to Boyle's Law (P₁V₁ = P₂V₂), pressure increases when volume decreases at constant temperature. Watch the container walls change color as pressure increases!"
+            >
+              <label>Pressure (atm): ℹ️</label>
+            </PhysicsTooltip>
             <span className="value-display calculated">{pressure.toFixed(2)} atm</span>
           </div>
 
           <div className="control-group">
-            <label htmlFor="temperature-slider">Temperature (relative):</label>
+            <PhysicsTooltip 
+              title="Temperature Effect" 
+              explanation="Temperature affects the kinetic energy of gas particles. Higher temperature = faster moving particles = more energetic collisions. This is why particles move faster and change color when you increase temperature!"
+            >
+              <label htmlFor="temperature-slider">Temperature (relative): ℹ️</label>
+            </PhysicsTooltip>
             <input
               id="temperature-slider"
               type="range"
@@ -233,13 +293,18 @@ const GasLawSimulator = () => {
           </div>
 
           <div className="button-group">
-            <button
-              onClick={runBoyleDemo}
-              disabled={isAnimating}
-              className="demo-button"
+            <PhysicsTooltip 
+              title="Boyle's Law Demonstration" 
+              explanation="This demo compresses the gas from 2.0L to 1.0L, demonstrating that halving the volume doubles the pressure (2.0 atm). Watch how particles hit walls more frequently and the container walls change color to show increased pressure!"
             >
-              {isAnimating ? 'Running Demo...' : 'Run Boyle\'s Law Demo'}
-            </button>
+              <button
+                onClick={runBoyleDemo}
+                disabled={isAnimating}
+                className="demo-button"
+              >
+                {isAnimating ? 'Running Demo...' : 'Run Boyle\'s Law Demo ℹ️'}
+              </button>
+            </PhysicsTooltip>
             <button
               onClick={resetSimulation}
               disabled={isAnimating}
@@ -331,19 +396,23 @@ const GasLawSimulator = () => {
       </div>
 
       <div className="educational-info">
-        <h3>Understanding Boyle's Law</h3>
+        <h3>Understanding Boyle's Law Physics</h3>
         <div className="info-grid">
           <div className="info-card">
-            <h4>The Law</h4>
-            <p>At constant temperature, the pressure of a gas is inversely proportional to its volume.</p>
+            <h4>Why Does Volume Shrink in the Demo?</h4>
+            <p>The demo compresses the gas from 2.0L to 1.0L to demonstrate Boyle's Law. This simulates what happens when you squeeze a syringe or compress air in a piston. The volume reduction is intentional to show the inverse pressure-volume relationship.</p>
           </div>
           <div className="info-card">
-            <h4>What You See</h4>
-            <p>As the container shrinks (volume decreases), gas particles hit the walls more frequently, increasing pressure.</p>
+            <h4>How Do You See Pressure Changes?</h4>
+            <p><strong>Visual Cues:</strong> Watch for (1) Container walls changing color from blue to orange/red, (2) Particles changing from green to orange/red, (3) "HIGH PRESSURE" text appearing, and (4) More frequent particle-wall collisions.</p>
           </div>
           <div className="info-card">
-            <h4>Real World</h4>
-            <p>This explains why a balloon pops when squeezed too hard, or why a syringe becomes harder to push as you compress the air inside.</p>
+            <h4>Temperature & Collision Speed</h4>
+            <p><strong>Yes, you're right!</strong> Higher temperature makes particles move faster (2x speed multiplier), and decreased volume causes more frequent wall collisions. Both effects increase pressure - this is why particles change color and move more energetically.</p>
+          </div>
+          <div className="info-card">
+            <h4>The Physics Formula</h4>
+            <p><strong>P₁V₁ = P₂V₂</strong><br/>Initial: 1.0 atm × 2.0 L = 2.0<br/>Final: 2.0 atm × 1.0 L = 2.0<br/>Halving volume doubles pressure!</p>
           </div>
         </div>
       </div>
